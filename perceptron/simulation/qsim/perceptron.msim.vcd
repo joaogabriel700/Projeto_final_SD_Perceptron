@@ -1,0 +1,1739 @@
+$comment
+	File created using the following command:
+		vcd file perceptron.msim.vcd -direction
+$end
+$date
+	Sun Nov 23 01:01:33 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module perceptron_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # start $end
+$var reg 8 $ switch_in_x [7:0] $end
+$var reg 8 % switch_in_y [7:0] $end
+$var wire 1 & led_saida $end
+$var wire 1 ' seg_0 $end
+$var wire 1 ( seg_1 $end
+$var wire 1 ) seg_2 $end
+$var wire 1 * seg_3 $end
+$var wire 1 + seg_4 $end
+$var wire 1 , seg_5 $end
+$var wire 1 - seg_6 $end
+$var wire 1 . sampler $end
+$scope module i1 $end
+$var wire 1 / gnd $end
+$var wire 1 0 vcc $end
+$var wire 1 1 unknown $end
+$var tri1 1 2 devclrn $end
+$var tri1 1 3 devpor $end
+$var tri1 1 4 devoe $end
+$var wire 1 5 seleciona_soma|d1~2_combout $end
+$var wire 1 6 somar|U17|co~0_combout $end
+$var wire 1 7 multiplica|multiplica|soma5|U17|s~0_combout $end
+$var wire 1 8 multiplica|multiplica|pp0[1]~0_combout $end
+$var wire 1 9 multiplica|multiplica|soma3|U4|co~1_combout $end
+$var wire 1 : multiplica|multiplica|soma1|U14|s~0_combout $end
+$var wire 1 ; multiplica|multiplica|soma4|U5|co~1_combout $end
+$var wire 1 < multiplica|corrige_b|u5|s~0_combout $end
+$var wire 1 = multiplica|multiplica|soma6|U10|s~0_combout $end
+$var wire 1 > multiplica|multiplica|soma4|U11|s~1_combout $end
+$var wire 1 ? acumulador|Q[0]~0_combout $end
+$var wire 1 @ seleciona_soma|d1~16_combout $end
+$var wire 1 A somar|U11|s~combout $end
+$var wire 1 B seleciona_soma|d1~17_combout $end
+$var wire 1 C somar|U14|s~combout $end
+$var wire 1 D seleciona_soma|d1~18_combout $end
+$var wire 1 E seleciona_soma|d1~25_combout $end
+$var wire 1 F somar|U22|s~combout $end
+$var wire 1 G somar|U25|s~combout $end
+$var wire 1 H somar|U27|s~combout $end
+$var wire 1 I multiplica|multiplica|soma2|U8|s~combout $end
+$var wire 1 J multiplica|corrige_b|u4|s~2_combout $end
+$var wire 1 K multiplica|corrige_b|u4|co~3_combout $end
+$var wire 1 L multiplica|corrige_saida|invert[19]~29_combout $end
+$var wire 1 M clk~combout $end
+$var wire 1 N clk~clkctrl_outclk $end
+$var wire 1 O start~combout $end
+$var wire 1 P Selector1~0_combout $end
+$var wire 1 Q rst~combout $end
+$var wire 1 R rst~clkctrl_outclk $end
+$var wire 1 S currentstate.load_v~regout $end
+$var wire 1 T currentstate.mult1~regout $end
+$var wire 1 U currentstate.mult2~regout $end
+$var wire 1 V currentstate.sum1~regout $end
+$var wire 1 W currentstate.sum2~regout $end
+$var wire 1 X currentstate.sum3~regout $end
+$var wire 1 Y currentstate.verifica_sinal~feeder_combout $end
+$var wire 1 Z currentstate.verifica_sinal~regout $end
+$var wire 1 [ seleciona_multi|d[7]~0_combout $end
+$var wire 1 \ registra_y|Q[4]~feeder_combout $end
+$var wire 1 ] multiplica|corrige_b|u5|s~combout $end
+$var wire 1 ^ registra_y|Q[2]~feeder_combout $end
+$var wire 1 _ seleciona_multi|d[2]~3_combout $end
+$var wire 1 ` seleciona_multi|d[0]~1_combout $end
+$var wire 1 a seleciona_multi|d[1]~2_combout $end
+$var wire 1 b multiplica|multiplica|soma2|U14|s~0_combout $end
+$var wire 1 c multiplica|corrige_b|u1|s~0_combout $end
+$var wire 1 d multiplica|multiplica|soma1|U8|co~0_combout $end
+$var wire 1 e multiplica|corrige_b|u2|s~combout $end
+$var wire 1 f multiplica|corrige_b|u1|co~5_combout $end
+$var wire 1 g multiplica|multiplica|soma2|U3|co~0_combout $end
+$var wire 1 h multiplica|multiplica|soma2|U4|co~0_combout $end
+$var wire 1 i multiplica|multiplica|soma1|U5|s~2_combout $end
+$var wire 1 j multiplica|multiplica|soma2|U6|co~0_combout $end
+$var wire 1 k multiplica|multiplica|soma2|U7|co~0_combout $end
+$var wire 1 l multiplica|multiplica|soma2|U8|co~0_combout $end
+$var wire 1 m multiplica|multiplica|soma2|U10|co~0_combout $end
+$var wire 1 n multiplica|multiplica|soma2|U9|co~0_combout $end
+$var wire 1 o multiplica|multiplica|soma2|U10|s~combout $end
+$var wire 1 p multiplica|multiplica|soma2|U9|s~combout $end
+$var wire 1 q multiplica|corrige_b|u2|co~0_combout $end
+$var wire 1 r multiplica|corrige_b|u3|s~combout $end
+$var wire 1 s multiplica|corrige_b|invert[2]~7_combout $end
+$var wire 1 t multiplica|multiplica|soma2|U5|co~0_combout $end
+$var wire 1 u multiplica|multiplica|soma1|U6|s~0_combout $end
+$var wire 1 v multiplica|multiplica|soma2|U6|s~combout $end
+$var wire 1 w multiplica|corrige_b|u2|s~0_combout $end
+$var wire 1 x multiplica|multiplica|soma2|U7|s~0_combout $end
+$var wire 1 y multiplica|multiplica|soma2|U3|s~0_combout $end
+$var wire 1 z multiplica|multiplica|soma1|U2|s~0_combout $end
+$var wire 1 { multiplica|multiplica|soma3|U4|co~0_combout $end
+$var wire 1 | multiplica|corrige_saida|invert[4]~10_combout $end
+$var wire 1 } multiplica|multiplica|soma3|U4|co~2_combout $end
+$var wire 1 ~ multiplica|multiplica|soma3|U5|co~0_combout $end
+$var wire 1 !! multiplica|multiplica|soma3|U7|co~0_combout $end
+$var wire 1 "! multiplica|multiplica|soma3|U8|co~0_combout $end
+$var wire 1 #! multiplica|multiplica|soma3|U9|co~0_combout $end
+$var wire 1 $! multiplica|multiplica|soma3|U11|co~0_combout $end
+$var wire 1 %! multiplica|multiplica|soma3|U14|s~0_combout $end
+$var wire 1 &! multiplica|multiplica|soma2|U15|s~0_combout $end
+$var wire 1 '! multiplica|multiplica|soma3|U14|co~0_combout $end
+$var wire 1 (! multiplica|multiplica|soma3|U15|s~1_combout $end
+$var wire 1 )! multiplica|multiplica|soma3|U10|co~0_combout $end
+$var wire 1 *! multiplica|multiplica|soma3|U11|s~combout $end
+$var wire 1 +! multiplica|multiplica|soma3|U12|s~2_combout $end
+$var wire 1 ,! multiplica|corrige_b|u1|co~4_combout $end
+$var wire 1 -! registra_y|Q[3]~feeder_combout $end
+$var wire 1 .! multiplica|corrige_saida|invert[3]~9_combout $end
+$var wire 1 /! multiplica|multiplica|soma3|U15|s~0_combout $end
+$var wire 1 0! multiplica|multiplica|soma3|U10|s~0_combout $end
+$var wire 1 1! multiplica|multiplica|soma3|U10|s~1_combout $end
+$var wire 1 2! multiplica|corrige_b|u4|s~combout $end
+$var wire 1 3! multiplica|multiplica|soma3|U9|s~0_combout $end
+$var wire 1 4! multiplica|multiplica|soma3|U6|co~0_combout $end
+$var wire 1 5! multiplica|multiplica|soma3|U7|s~combout $end
+$var wire 1 6! multiplica|multiplica|soma2|U3|s~1_combout $end
+$var wire 1 7! multiplica|multiplica|soma4|U5|co~0_combout $end
+$var wire 1 8! multiplica|multiplica|soma3|U5|s~combout $end
+$var wire 1 9! multiplica|multiplica|soma4|U5|co~2_combout $end
+$var wire 1 :! multiplica|multiplica|soma3|U6|s~0_combout $end
+$var wire 1 ;! multiplica|multiplica|soma4|U6|co~0_combout $end
+$var wire 1 <! multiplica|corrige_b|invert[3]~4_combout $end
+$var wire 1 =! multiplica|corrige_b|u2|co~1_combout $end
+$var wire 1 >! multiplica|multiplica|soma3|U8|s~0_combout $end
+$var wire 1 ?! multiplica|multiplica|soma3|U8|s~combout $end
+$var wire 1 @! multiplica|multiplica|soma4|U8|co~0_combout $end
+$var wire 1 A! multiplica|multiplica|soma4|U9|co~0_combout $end
+$var wire 1 B! multiplica|multiplica|soma4|U10|co~0_combout $end
+$var wire 1 C! multiplica|multiplica|soma4|U12|co~0_combout $end
+$var wire 1 D! multiplica|multiplica|soma4|U13|co~0_combout $end
+$var wire 1 E! multiplica|multiplica|soma4|U15|co~0_combout $end
+$var wire 1 F! multiplica|multiplica|soma2|U15|s~combout $end
+$var wire 1 G! multiplica|multiplica|soma2|U15|co~0_combout $end
+$var wire 1 H! multiplica|multiplica|soma3|U16|co~0_combout $end
+$var wire 1 I! multiplica|multiplica|soma3|U15|co~0_combout $end
+$var wire 1 J! multiplica|multiplica|soma3|U16|s~combout $end
+$var wire 1 K! multiplica|multiplica|soma4|U17|co~0_combout $end
+$var wire 1 L! multiplica|multiplica|soma4|U13|s~combout $end
+$var wire 1 M! multiplica|multiplica|soma4|U11|s~0_combout $end
+$var wire 1 N! multiplica|multiplica|soma4|U10|s~4_combout $end
+$var wire 1 O! multiplica|multiplica|soma4|U9|s~0_combout $end
+$var wire 1 P! multiplica|corrige_saida|invert[6]~12_combout $end
+$var wire 1 Q! multiplica|multiplica|soma3|U4|s~0_combout $end
+$var wire 1 R! multiplica|multiplica|soma4|U5|s~combout $end
+$var wire 1 S! multiplica|multiplica|soma5|U6|co~0_combout $end
+$var wire 1 T! multiplica|multiplica|soma4|U7|s~0_combout $end
+$var wire 1 U! multiplica|multiplica|soma5|U7|co~0_combout $end
+$var wire 1 V! multiplica|multiplica|soma5|U9|co~0_combout $end
+$var wire 1 W! multiplica|multiplica|soma5|U10|co~0_combout $end
+$var wire 1 X! multiplica|multiplica|soma5|U11|co~0_combout $end
+$var wire 1 Y! multiplica|multiplica|soma5|U13|co~0_combout $end
+$var wire 1 Z! multiplica|multiplica|soma5|U15|co~0_combout $end
+$var wire 1 [! registra_x|Q[4]~feeder_combout $end
+$var wire 1 \! multiplica|corrige_b|u3|co~0_combout $end
+$var wire 1 ]! multiplica|corrige_saida|invert[4]~8_combout $end
+$var wire 1 ^! multiplica|multiplica|soma4|U16|s~0_combout $end
+$var wire 1 _! multiplica|multiplica|soma4|U16|s~1_combout $end
+$var wire 1 `! multiplica|multiplica|soma5|U16|co~0_combout $end
+$var wire 1 a! multiplica|multiplica|soma5|U18|co~0_combout $end
+$var wire 1 b! multiplica|corrige_b|u4|co~2_combout $end
+$var wire 1 c! multiplica|multiplica|soma4|U16|co~0_combout $end
+$var wire 1 d! multiplica|multiplica|soma4|U17|s~combout $end
+$var wire 1 e! multiplica|multiplica|soma5|U17|co~0_combout $end
+$var wire 1 f! multiplica|multiplica|soma5|U18|s~combout $end
+$var wire 1 g! multiplica|multiplica|soma5|U17|s~1_combout $end
+$var wire 1 h! multiplica|multiplica|soma6|U17|co~0_combout $end
+$var wire 1 i! multiplica|multiplica|soma6|U19|co~0_combout $end
+$var wire 1 j! multiplica|corrige_b|u5|co~0_combout $end
+$var wire 1 k! multiplica|multiplica|soma6|U18|co~0_combout $end
+$var wire 1 l! multiplica|multiplica|soma6|U19|s~combout $end
+$var wire 1 m! multiplica|multiplica|soma6|U18|s~1_combout $end
+$var wire 1 n! multiplica|multiplica|soma6|U18|s~2_combout $end
+$var wire 1 o! multiplica|multiplica|soma5|U15|s~combout $end
+$var wire 1 p! multiplica|corrige_b|u6|s~combout $end
+$var wire 1 q! multiplica|multiplica|soma5|U11|s~0_combout $end
+$var wire 1 r! multiplica|multiplica|soma5|U10|s~0_combout $end
+$var wire 1 s! multiplica|multiplica|soma5|U6|s~0_combout $end
+$var wire 1 t! multiplica|multiplica|soma5|U7|s~combout $end
+$var wire 1 u! multiplica|multiplica|soma6|U7|co~0_combout $end
+$var wire 1 v! multiplica|multiplica|soma4|U7|co~0_combout $end
+$var wire 1 w! multiplica|corrige_saida|invert[8]~11_combout $end
+$var wire 1 x! multiplica|multiplica|soma4|U8|s~0_combout $end
+$var wire 1 y! multiplica|multiplica|soma6|U8|co~0_combout $end
+$var wire 1 z! multiplica|multiplica|soma5|U8|co~0_combout $end
+$var wire 1 {! multiplica|multiplica|soma5|U9|s~combout $end
+$var wire 1 |! multiplica|multiplica|soma6|U10|co~0_combout $end
+$var wire 1 }! multiplica|multiplica|soma6|U11|co~0_combout $end
+$var wire 1 ~! multiplica|multiplica|soma4|U11|co~0_combout $end
+$var wire 1 !" multiplica|multiplica|soma5|U12|s~0_combout $end
+$var wire 1 "" multiplica|multiplica|soma6|U12|co~0_combout $end
+$var wire 1 #" multiplica|corrige_saida|invert[14]~25_combout $end
+$var wire 1 $" multiplica|multiplica|soma6|U14|co~0_combout $end
+$var wire 1 %" multiplica|multiplica|soma6|U16|co~0_combout $end
+$var wire 1 &" multiplica|multiplica|soma6|U16|s~combout $end
+$var wire 1 '" multiplica|corrige_b|u6|co~0_combout $end
+$var wire 1 (" multiplica|multiplica|soma5|U13|s~0_combout $end
+$var wire 1 )" multiplica|multiplica|soma4|U12|s~combout $end
+$var wire 1 *" multiplica|multiplica|soma5|U12|co~0_combout $end
+$var wire 1 +" multiplica|multiplica|soma5|U13|s~1_combout $end
+$var wire 1 ," multiplica|multiplica|soma6|U13|co~0_combout $end
+$var wire 1 -" multiplica|multiplica|soma6|U14|s~combout $end
+$var wire 1 ." multiplica|multiplica|soma6|U15|s~combout $end
+$var wire 1 /" multiplica|multiplica|soma7|U15|co~0_combout $end
+$var wire 1 0" multiplica|multiplica|soma7|U17|co~0_combout $end
+$var wire 1 1" multiplica|multiplica|soma7|U18|co~2_combout $end
+$var wire 1 2" multiplica|multiplica|soma7|U20|co~0_combout $end
+$var wire 1 3" multiplica|multiplica|soma7|U19|co~0_combout $end
+$var wire 1 4" multiplica|multiplica|soma6|U19|s~0_combout $end
+$var wire 1 5" multiplica|multiplica|soma6|U13|s~0_combout $end
+$var wire 1 6" multiplica|multiplica|soma6|U12|s~combout $end
+$var wire 1 7" multiplica|corrige_b|invert[6]~5_combout $end
+$var wire 1 8" multiplica|corrige_b|invert[5]~6_combout $end
+$var wire 1 9" multiplica|multiplica|soma6|U11|s~combout $end
+$var wire 1 :" multiplica|multiplica|soma4|U10|s~5_combout $end
+$var wire 1 ;" multiplica|multiplica|soma6|U9|co~0_combout $end
+$var wire 1 <" multiplica|multiplica|soma6|U10|s~1_combout $end
+$var wire 1 =" multiplica|multiplica|soma7|U11|co~0_combout $end
+$var wire 1 >" multiplica|multiplica|soma7|U12|co~0_combout $end
+$var wire 1 ?" multiplica|multiplica|soma7|U13|co~0_combout $end
+$var wire 1 @" multiplica|corrige_saida|invert[14]~26_combout $end
+$var wire 1 A" seleciona_multi|d[5]~4_combout $end
+$var wire 1 B" multiplica|multiplica|soma6|U18|s~0_combout $end
+$var wire 1 C" multiplica|corrige_saida|u9|s~0_combout $end
+$var wire 1 D" multiplica|multiplica|soma6|U7|s~combout $end
+$var wire 1 E" multiplica|multiplica|soma5|U8|s~combout $end
+$var wire 1 F" multiplica|multiplica|soma7|U8|co~0_combout $end
+$var wire 1 G" multiplica|multiplica|soma7|U9|co~0_combout $end
+$var wire 1 H" multiplica|multiplica|soma6|U9|s~0_combout $end
+$var wire 1 I" multiplica|corrige_saida|invert[7]~20_combout $end
+$var wire 1 J" multiplica|corrige_saida|invert[5]~18_combout $end
+$var wire 1 K" multiplica|corrige_saida|invert[5]~17_combout $end
+$var wire 1 L" multiplica|corrige_saida|invert[5]~19_combout $end
+$var wire 1 M" multiplica|corrige_saida|invert[3]~16_combout $end
+$var wire 1 N" multiplica|corrige_saida|u3|co~0_combout $end
+$var wire 1 O" multiplica|corrige_saida|u4|co~0_combout $end
+$var wire 1 P" multiplica|corrige_saida|u6|co~0_combout $end
+$var wire 1 Q" multiplica|corrige_saida|invert[2]~21_combout $end
+$var wire 1 R" multiplica|corrige_saida|invert[8]~22_combout $end
+$var wire 1 S" multiplica|corrige_saida|invert[8]~28_combout $end
+$var wire 1 T" multiplica|corrige_saida|invert[8]~23_combout $end
+$var wire 1 U" multiplica|corrige_saida|u8|co~0_combout $end
+$var wire 1 V" multiplica|corrige_saida|u9|co~0_combout $end
+$var wire 1 W" multiplica|corrige_saida|u10|co~0_combout $end
+$var wire 1 X" multiplica|corrige_saida|invert[11]~27_combout $end
+$var wire 1 Y" multiplica|multiplica|soma7|U10|co~0_combout $end
+$var wire 1 Z" multiplica|corrige_saida|invert[11]~14_combout $end
+$var wire 1 [" multiplica|corrige_saida|invert[11]~15_combout $end
+$var wire 1 \" multiplica|multiplica|soma6|U12|s~0_combout $end
+$var wire 1 ]" multiplica|corrige_saida|invert[12]~24_combout $end
+$var wire 1 ^" multiplica|corrige_saida|u13|co~0_combout $end
+$var wire 1 _" multiplica|corrige_saida|u16|co~0_combout $end
+$var wire 1 `" multiplica|corrige_saida|u18|co~0_combout $end
+$var wire 1 a" multiplica|corrige_saida|u19|co~0_combout $end
+$var wire 1 b" multiplica|corrige_saida|u20|co~0_combout $end
+$var wire 1 c" multiplica|corrige_saida|u23|s~0_combout $end
+$var wire 1 d" seleciona_soma|d1~12_combout $end
+$var wire 1 e" somar|U23|co~0_combout $end
+$var wire 1 f" multiplica|corrige_saida|u22|s~0_combout $end
+$var wire 1 g" somar|U22|co~0_combout $end
+$var wire 1 h" multiplica|corrige_saida|u21|s~combout $end
+$var wire 1 i" somar|U21|co~0_combout $end
+$var wire 1 j" seleciona_soma|d1~24_combout $end
+$var wire 1 k" multiplica|corrige_saida|u20|s~combout $end
+$var wire 1 l" seleciona_soma|d1~23_combout $end
+$var wire 1 m" multiplica|corrige_saida|u19|s~combout $end
+$var wire 1 n" somar|U19|co~0_combout $end
+$var wire 1 o" seleciona_soma|d1~22_combout $end
+$var wire 1 p" multiplica|multiplica|soma6|U17|s~combout $end
+$var wire 1 q" multiplica|corrige_saida|u18|s~combout $end
+$var wire 1 r" somar|U18|co~0_combout $end
+$var wire 1 s" seleciona_soma|d1~21_combout $end
+$var wire 1 t" multiplica|corrige_saida|u16|s~combout $end
+$var wire 1 u" seleciona_soma|d1~19_combout $end
+$var wire 1 v" multiplica|corrige_saida|u14|s~combout $end
+$var wire 1 w" somar|U14|co~0_combout $end
+$var wire 1 x" multiplica|corrige_saida|u12|s~combout $end
+$var wire 1 y" seleciona_soma|d1~1_combout $end
+$var wire 1 z" somar|U12|s~combout $end
+$var wire 1 {" acumulador|Q[12]~feeder_combout $end
+$var wire 1 |" Selector0~0_combout $end
+$var wire 1 }" currentstate.wait_start~regout $end
+$var wire 1 ~" WideOr8~combout $end
+$var wire 1 !# multiplica|corrige_saida|u11|s~combout $end
+$var wire 1 "# somar|U11|co~0_combout $end
+$var wire 1 ## multiplica|corrige_saida|u10|s~0_combout $end
+$var wire 1 $# multiplica|corrige_saida|u10|s~1_combout $end
+$var wire 1 %# somar|U10|co~0_combout $end
+$var wire 1 &# seleciona_soma|d1~13_combout $end
+$var wire 1 '# multiplica|corrige_saida|u9|s~1_combout $end
+$var wire 1 (# multiplica|corrige_saida|u9|s~2_combout $end
+$var wire 1 )# seleciona_soma|d1~3_combout $end
+$var wire 1 *# seleciona_soma|d1~14_combout $end
+$var wire 1 +# multiplica|corrige_saida|u8|s~combout $end
+$var wire 1 ,# seleciona_soma|d1~4_combout $end
+$var wire 1 -# somar|U8|s~combout $end
+$var wire 1 .# multiplica|corrige_saida|u7|s~combout $end
+$var wire 1 /# seleciona_soma|d1~5_combout $end
+$var wire 1 0# multiplica|corrige_saida|u6|s~combout $end
+$var wire 1 1# seleciona_soma|d1~6_combout $end
+$var wire 1 2# multiplica|corrige_saida|u5|s~combout $end
+$var wire 1 3# seleciona_soma|d1~7_combout $end
+$var wire 1 4# multiplica|corrige_saida|u2|s~combout $end
+$var wire 1 5# seleciona_soma|d1~15_combout $end
+$var wire 1 6# somar|U2|s~combout $end
+$var wire 1 7# somar|U2|co~0_combout $end
+$var wire 1 8# seleciona_soma|d1[0]~10_combout $end
+$var wire 1 9# multiplica|corrige_saida|u1|s~0_combout $end
+$var wire 1 :# seleciona_soma|d1[1]~11_combout $end
+$var wire 1 ;# somar|U1|s~0_combout $end
+$var wire 1 <# somar|U1|co~0_combout $end
+$var wire 1 =# somar|U2|co~1_combout $end
+$var wire 1 ># multiplica|corrige_saida|u3|s~combout $end
+$var wire 1 ?# seleciona_soma|d1~9_combout $end
+$var wire 1 @# somar|U3|s~combout $end
+$var wire 1 A# somar|U3|co~0_combout $end
+$var wire 1 B# multiplica|corrige_saida|u4|s~combout $end
+$var wire 1 C# seleciona_soma|d1~8_combout $end
+$var wire 1 D# somar|U4|s~combout $end
+$var wire 1 E# somar|U4|co~0_combout $end
+$var wire 1 F# somar|U5|s~combout $end
+$var wire 1 G# somar|U5|co~0_combout $end
+$var wire 1 H# somar|U6|s~combout $end
+$var wire 1 I# somar|U6|co~0_combout $end
+$var wire 1 J# somar|U7|s~combout $end
+$var wire 1 K# somar|U7|co~0_combout $end
+$var wire 1 L# somar|U8|co~0_combout $end
+$var wire 1 M# somar|U9|s~combout $end
+$var wire 1 N# somar|U9|co~0_combout $end
+$var wire 1 O# somar|U10|s~combout $end
+$var wire 1 P# somar|U10|co~1_combout $end
+$var wire 1 Q# somar|U10|co~2_combout $end
+$var wire 1 R# somar|U11|co~1_combout $end
+$var wire 1 S# somar|U12|co~0_combout $end
+$var wire 1 T# somar|U13|s~combout $end
+$var wire 1 U# multiplica|corrige_saida|invert[13]~13_combout $end
+$var wire 1 V# multiplica|corrige_saida|u13|s~combout $end
+$var wire 1 W# seleciona_soma|d1~0_combout $end
+$var wire 1 X# somar|U13|co~0_combout $end
+$var wire 1 Y# somar|U14|co~1_combout $end
+$var wire 1 Z# somar|U15|s~combout $end
+$var wire 1 [# multiplica|multiplica|soma6|U13|s~combout $end
+$var wire 1 \# multiplica|multiplica|soma7|U14|co~0_combout $end
+$var wire 1 ]# multiplica|corrige_saida|u14|co~0_combout $end
+$var wire 1 ^# multiplica|corrige_saida|u15|s~combout $end
+$var wire 1 _# somar|U15|co~0_combout $end
+$var wire 1 `# somar|U15|co~1_combout $end
+$var wire 1 a# somar|U16|s~combout $end
+$var wire 1 b# somar|U16|co~0_combout $end
+$var wire 1 c# somar|U16|co~1_combout $end
+$var wire 1 d# multiplica|corrige_saida|u17|s~combout $end
+$var wire 1 e# seleciona_soma|d1~20_combout $end
+$var wire 1 f# somar|U17|s~combout $end
+$var wire 1 g# somar|U17|co~1_combout $end
+$var wire 1 h# somar|U18|s~combout $end
+$var wire 1 i# somar|U18|co~1_combout $end
+$var wire 1 j# somar|U19|s~combout $end
+$var wire 1 k# somar|U19|co~1_combout $end
+$var wire 1 l# somar|U20|s~combout $end
+$var wire 1 m# somar|U20|co~0_combout $end
+$var wire 1 n# somar|U20|co~1_combout $end
+$var wire 1 o# somar|U21|s~combout $end
+$var wire 1 p# somar|U21|co~1_combout $end
+$var wire 1 q# somar|U22|co~1_combout $end
+$var wire 1 r# somar|U23|s~combout $end
+$var wire 1 s# somar|U23|co~1_combout $end
+$var wire 1 t# somar|U24|s~combout $end
+$var wire 1 u# somar|U25|co~0_combout $end
+$var wire 1 v# somar|U26|s~combout $end
+$var wire 1 w# somar|U27|co~0_combout $end
+$var wire 1 x# somar|U28|s~combout $end
+$var wire 1 y# somar|U24|co~0_combout $end
+$var wire 1 z# somar|U26|co~0_combout $end
+$var wire 1 {# somar|U28|co~0_combout $end
+$var wire 1 |# somar|U29|s~combout $end
+$var wire 1 }# somar|U29|co~0_combout $end
+$var wire 1 ~# somar|U30|s~combout $end
+$var wire 1 !$ somar|U30|co~0_combout $end
+$var wire 1 "$ somar|U31|s~combout $end
+$var wire 1 #$ somar|U31|co~0_combout $end
+$var wire 1 $$ somar|U32|s~combout $end
+$var wire 1 %$ somar|U32|co~0_combout $end
+$var wire 1 &$ somar|U33|s~combout $end
+$var wire 1 '$ somar|U34|s~0_combout $end
+$var wire 1 ($ somar|U34|s~combout $end
+$var wire 1 )$ somar|U35|s~0_combout $end
+$var wire 1 *$ somar|U35|s~combout $end
+$var wire 1 +$ Selector8~0_combout $end
+$var wire 1 ,$ Selector8~1_combout $end
+$var wire 1 -$ currentstate.show0~regout $end
+$var wire 1 .$ Selector9~0_combout $end
+$var wire 1 /$ currentstate.show1~regout $end
+$var wire 1 0$ WideOr7~0_combout $end
+$var wire 1 1$ s_led~combout $end
+$var wire 1 2$ registrador_2|Q [31] $end
+$var wire 1 3$ registrador_2|Q [30] $end
+$var wire 1 4$ registrador_2|Q [29] $end
+$var wire 1 5$ registrador_2|Q [28] $end
+$var wire 1 6$ registrador_2|Q [27] $end
+$var wire 1 7$ registrador_2|Q [26] $end
+$var wire 1 8$ registrador_2|Q [25] $end
+$var wire 1 9$ registrador_2|Q [24] $end
+$var wire 1 :$ registrador_2|Q [23] $end
+$var wire 1 ;$ registrador_2|Q [22] $end
+$var wire 1 <$ registrador_2|Q [21] $end
+$var wire 1 =$ registrador_2|Q [20] $end
+$var wire 1 >$ registrador_2|Q [19] $end
+$var wire 1 ?$ registrador_2|Q [18] $end
+$var wire 1 @$ registrador_2|Q [17] $end
+$var wire 1 A$ registrador_2|Q [16] $end
+$var wire 1 B$ registrador_2|Q [15] $end
+$var wire 1 C$ registrador_2|Q [14] $end
+$var wire 1 D$ registrador_2|Q [13] $end
+$var wire 1 E$ registrador_2|Q [12] $end
+$var wire 1 F$ registrador_2|Q [11] $end
+$var wire 1 G$ registrador_2|Q [10] $end
+$var wire 1 H$ registrador_2|Q [9] $end
+$var wire 1 I$ registrador_2|Q [8] $end
+$var wire 1 J$ registrador_2|Q [7] $end
+$var wire 1 K$ registrador_2|Q [6] $end
+$var wire 1 L$ registrador_2|Q [5] $end
+$var wire 1 M$ registrador_2|Q [4] $end
+$var wire 1 N$ registrador_2|Q [3] $end
+$var wire 1 O$ registrador_2|Q [2] $end
+$var wire 1 P$ registrador_2|Q [1] $end
+$var wire 1 Q$ registrador_2|Q [0] $end
+$var wire 1 R$ registra_y|Q [7] $end
+$var wire 1 S$ registra_y|Q [6] $end
+$var wire 1 T$ registra_y|Q [5] $end
+$var wire 1 U$ registra_y|Q [4] $end
+$var wire 1 V$ registra_y|Q [3] $end
+$var wire 1 W$ registra_y|Q [2] $end
+$var wire 1 X$ registra_y|Q [1] $end
+$var wire 1 Y$ registra_y|Q [0] $end
+$var wire 1 Z$ registra_x|Q [7] $end
+$var wire 1 [$ registra_x|Q [6] $end
+$var wire 1 \$ registra_x|Q [5] $end
+$var wire 1 ]$ registra_x|Q [4] $end
+$var wire 1 ^$ registra_x|Q [3] $end
+$var wire 1 _$ registra_x|Q [2] $end
+$var wire 1 `$ registra_x|Q [1] $end
+$var wire 1 a$ registra_x|Q [0] $end
+$var wire 1 b$ multiplica|multiplica|pp7 [23] $end
+$var wire 1 c$ multiplica|multiplica|pp7 [22] $end
+$var wire 1 d$ multiplica|multiplica|pp7 [21] $end
+$var wire 1 e$ multiplica|multiplica|pp7 [20] $end
+$var wire 1 f$ multiplica|multiplica|pp7 [19] $end
+$var wire 1 g$ multiplica|multiplica|pp7 [18] $end
+$var wire 1 h$ multiplica|multiplica|pp7 [17] $end
+$var wire 1 i$ multiplica|multiplica|pp7 [16] $end
+$var wire 1 j$ multiplica|multiplica|pp7 [15] $end
+$var wire 1 k$ multiplica|multiplica|pp7 [14] $end
+$var wire 1 l$ multiplica|multiplica|pp7 [13] $end
+$var wire 1 m$ multiplica|multiplica|pp7 [12] $end
+$var wire 1 n$ multiplica|multiplica|pp7 [11] $end
+$var wire 1 o$ multiplica|multiplica|pp7 [10] $end
+$var wire 1 p$ multiplica|multiplica|pp7 [9] $end
+$var wire 1 q$ multiplica|multiplica|pp7 [8] $end
+$var wire 1 r$ multiplica|multiplica|pp7 [7] $end
+$var wire 1 s$ multiplica|multiplica|pp7 [6] $end
+$var wire 1 t$ multiplica|multiplica|pp7 [5] $end
+$var wire 1 u$ multiplica|multiplica|pp7 [4] $end
+$var wire 1 v$ multiplica|multiplica|pp7 [3] $end
+$var wire 1 w$ multiplica|multiplica|pp7 [2] $end
+$var wire 1 x$ multiplica|multiplica|pp7 [1] $end
+$var wire 1 y$ multiplica|multiplica|pp7 [0] $end
+$var wire 1 z$ multiplica|multiplica|pp6 [23] $end
+$var wire 1 {$ multiplica|multiplica|pp6 [22] $end
+$var wire 1 |$ multiplica|multiplica|pp6 [21] $end
+$var wire 1 }$ multiplica|multiplica|pp6 [20] $end
+$var wire 1 ~$ multiplica|multiplica|pp6 [19] $end
+$var wire 1 !% multiplica|multiplica|pp6 [18] $end
+$var wire 1 "% multiplica|multiplica|pp6 [17] $end
+$var wire 1 #% multiplica|multiplica|pp6 [16] $end
+$var wire 1 $% multiplica|multiplica|pp6 [15] $end
+$var wire 1 %% multiplica|multiplica|pp6 [14] $end
+$var wire 1 &% multiplica|multiplica|pp6 [13] $end
+$var wire 1 '% multiplica|multiplica|pp6 [12] $end
+$var wire 1 (% multiplica|multiplica|pp6 [11] $end
+$var wire 1 )% multiplica|multiplica|pp6 [10] $end
+$var wire 1 *% multiplica|multiplica|pp6 [9] $end
+$var wire 1 +% multiplica|multiplica|pp6 [8] $end
+$var wire 1 ,% multiplica|multiplica|pp6 [7] $end
+$var wire 1 -% multiplica|multiplica|pp6 [6] $end
+$var wire 1 .% multiplica|multiplica|pp6 [5] $end
+$var wire 1 /% multiplica|multiplica|pp6 [4] $end
+$var wire 1 0% multiplica|multiplica|pp6 [3] $end
+$var wire 1 1% multiplica|multiplica|pp6 [2] $end
+$var wire 1 2% multiplica|multiplica|pp6 [1] $end
+$var wire 1 3% multiplica|multiplica|pp6 [0] $end
+$var wire 1 4% registrador_1|Q [31] $end
+$var wire 1 5% registrador_1|Q [30] $end
+$var wire 1 6% registrador_1|Q [29] $end
+$var wire 1 7% registrador_1|Q [28] $end
+$var wire 1 8% registrador_1|Q [27] $end
+$var wire 1 9% registrador_1|Q [26] $end
+$var wire 1 :% registrador_1|Q [25] $end
+$var wire 1 ;% registrador_1|Q [24] $end
+$var wire 1 <% registrador_1|Q [23] $end
+$var wire 1 =% registrador_1|Q [22] $end
+$var wire 1 >% registrador_1|Q [21] $end
+$var wire 1 ?% registrador_1|Q [20] $end
+$var wire 1 @% registrador_1|Q [19] $end
+$var wire 1 A% registrador_1|Q [18] $end
+$var wire 1 B% registrador_1|Q [17] $end
+$var wire 1 C% registrador_1|Q [16] $end
+$var wire 1 D% registrador_1|Q [15] $end
+$var wire 1 E% registrador_1|Q [14] $end
+$var wire 1 F% registrador_1|Q [13] $end
+$var wire 1 G% registrador_1|Q [12] $end
+$var wire 1 H% registrador_1|Q [11] $end
+$var wire 1 I% registrador_1|Q [10] $end
+$var wire 1 J% registrador_1|Q [9] $end
+$var wire 1 K% registrador_1|Q [8] $end
+$var wire 1 L% registrador_1|Q [7] $end
+$var wire 1 M% registrador_1|Q [6] $end
+$var wire 1 N% registrador_1|Q [5] $end
+$var wire 1 O% registrador_1|Q [4] $end
+$var wire 1 P% registrador_1|Q [3] $end
+$var wire 1 Q% registrador_1|Q [2] $end
+$var wire 1 R% registrador_1|Q [1] $end
+$var wire 1 S% registrador_1|Q [0] $end
+$var wire 1 T% acumulador|Q [35] $end
+$var wire 1 U% acumulador|Q [34] $end
+$var wire 1 V% acumulador|Q [33] $end
+$var wire 1 W% acumulador|Q [32] $end
+$var wire 1 X% acumulador|Q [31] $end
+$var wire 1 Y% acumulador|Q [30] $end
+$var wire 1 Z% acumulador|Q [29] $end
+$var wire 1 [% acumulador|Q [28] $end
+$var wire 1 \% acumulador|Q [27] $end
+$var wire 1 ]% acumulador|Q [26] $end
+$var wire 1 ^% acumulador|Q [25] $end
+$var wire 1 _% acumulador|Q [24] $end
+$var wire 1 `% acumulador|Q [23] $end
+$var wire 1 a% acumulador|Q [22] $end
+$var wire 1 b% acumulador|Q [21] $end
+$var wire 1 c% acumulador|Q [20] $end
+$var wire 1 d% acumulador|Q [19] $end
+$var wire 1 e% acumulador|Q [18] $end
+$var wire 1 f% acumulador|Q [17] $end
+$var wire 1 g% acumulador|Q [16] $end
+$var wire 1 h% acumulador|Q [15] $end
+$var wire 1 i% acumulador|Q [14] $end
+$var wire 1 j% acumulador|Q [13] $end
+$var wire 1 k% acumulador|Q [12] $end
+$var wire 1 l% acumulador|Q [11] $end
+$var wire 1 m% acumulador|Q [10] $end
+$var wire 1 n% acumulador|Q [9] $end
+$var wire 1 o% acumulador|Q [8] $end
+$var wire 1 p% acumulador|Q [7] $end
+$var wire 1 q% acumulador|Q [6] $end
+$var wire 1 r% acumulador|Q [5] $end
+$var wire 1 s% acumulador|Q [4] $end
+$var wire 1 t% acumulador|Q [3] $end
+$var wire 1 u% acumulador|Q [2] $end
+$var wire 1 v% acumulador|Q [1] $end
+$var wire 1 w% acumulador|Q [0] $end
+$var wire 1 x% switch_in_y~combout [7] $end
+$var wire 1 y% switch_in_y~combout [6] $end
+$var wire 1 z% switch_in_y~combout [5] $end
+$var wire 1 {% switch_in_y~combout [4] $end
+$var wire 1 |% switch_in_y~combout [3] $end
+$var wire 1 }% switch_in_y~combout [2] $end
+$var wire 1 ~% switch_in_y~combout [1] $end
+$var wire 1 !& switch_in_y~combout [0] $end
+$var wire 1 "& switch_in_x~combout [7] $end
+$var wire 1 #& switch_in_x~combout [6] $end
+$var wire 1 $& switch_in_x~combout [5] $end
+$var wire 1 %& switch_in_x~combout [4] $end
+$var wire 1 && switch_in_x~combout [3] $end
+$var wire 1 '& switch_in_x~combout [2] $end
+$var wire 1 (& switch_in_x~combout [1] $end
+$var wire 1 )& switch_in_x~combout [0] $end
+$var wire 1 *& multiplica|corrige_b|invert [23] $end
+$var wire 1 +& multiplica|corrige_b|invert [22] $end
+$var wire 1 ,& multiplica|corrige_b|invert [21] $end
+$var wire 1 -& multiplica|corrige_b|invert [20] $end
+$var wire 1 .& multiplica|corrige_b|invert [19] $end
+$var wire 1 /& multiplica|corrige_b|invert [18] $end
+$var wire 1 0& multiplica|corrige_b|invert [17] $end
+$var wire 1 1& multiplica|corrige_b|invert [16] $end
+$var wire 1 2& multiplica|corrige_b|invert [15] $end
+$var wire 1 3& multiplica|corrige_b|invert [14] $end
+$var wire 1 4& multiplica|corrige_b|invert [13] $end
+$var wire 1 5& multiplica|corrige_b|invert [12] $end
+$var wire 1 6& multiplica|corrige_b|invert [11] $end
+$var wire 1 7& multiplica|corrige_b|invert [10] $end
+$var wire 1 8& multiplica|corrige_b|invert [9] $end
+$var wire 1 9& multiplica|corrige_b|invert [8] $end
+$var wire 1 :& multiplica|corrige_b|invert [7] $end
+$var wire 1 ;& multiplica|corrige_b|invert [6] $end
+$var wire 1 <& multiplica|corrige_b|invert [5] $end
+$var wire 1 =& multiplica|corrige_b|invert [4] $end
+$var wire 1 >& multiplica|corrige_b|invert [3] $end
+$var wire 1 ?& multiplica|corrige_b|invert [2] $end
+$var wire 1 @& multiplica|corrige_b|invert [1] $end
+$var wire 1 A& multiplica|corrige_b|invert [0] $end
+$var wire 1 B& multiplica|corrige_saida|invert [23] $end
+$var wire 1 C& multiplica|corrige_saida|invert [22] $end
+$var wire 1 D& multiplica|corrige_saida|invert [21] $end
+$var wire 1 E& multiplica|corrige_saida|invert [20] $end
+$var wire 1 F& multiplica|corrige_saida|invert [19] $end
+$var wire 1 G& multiplica|corrige_saida|invert [18] $end
+$var wire 1 H& multiplica|corrige_saida|invert [17] $end
+$var wire 1 I& multiplica|corrige_saida|invert [16] $end
+$var wire 1 J& multiplica|corrige_saida|invert [15] $end
+$var wire 1 K& multiplica|corrige_saida|invert [14] $end
+$var wire 1 L& multiplica|corrige_saida|invert [13] $end
+$var wire 1 M& multiplica|corrige_saida|invert [12] $end
+$var wire 1 N& multiplica|corrige_saida|invert [11] $end
+$var wire 1 O& multiplica|corrige_saida|invert [10] $end
+$var wire 1 P& multiplica|corrige_saida|invert [9] $end
+$var wire 1 Q& multiplica|corrige_saida|invert [8] $end
+$var wire 1 R& multiplica|corrige_saida|invert [7] $end
+$var wire 1 S& multiplica|corrige_saida|invert [6] $end
+$var wire 1 T& multiplica|corrige_saida|invert [5] $end
+$var wire 1 U& multiplica|corrige_saida|invert [4] $end
+$var wire 1 V& multiplica|corrige_saida|invert [3] $end
+$var wire 1 W& multiplica|corrige_saida|invert [2] $end
+$var wire 1 X& multiplica|corrige_saida|invert [1] $end
+$var wire 1 Y& multiplica|corrige_saida|invert [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+1#
+b0 $
+b10 %
+x&
+x'
+1(
+1)
+x*
+x+
+x,
+0-
+x.
+0/
+10
+x1
+12
+13
+14
+05
+06
+07
+08
+19
+0:
+1;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+1I
+0J
+0K
+0L
+0M
+0N
+1O
+1P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+1b
+0c
+0d
+1e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+1o
+1p
+1q
+1r
+0s
+0t
+0u
+1v
+1w
+0x
+1y
+0z
+0{
+1|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+1'!
+1(!
+0)!
+1*!
+0+!
+1,!
+0-!
+1.!
+0/!
+00!
+01!
+02!
+03!
+04!
+15!
+06!
+07!
+18!
+09!
+0:!
+0;!
+0<!
+1=!
+0>!
+1?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+1F!
+0G!
+0H!
+0I!
+1J!
+0K!
+0L!
+1M!
+0N!
+0O!
+0P!
+0Q!
+1R!
+0S!
+1T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+1^!
+1_!
+0`!
+0a!
+0b!
+0c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+0l!
+0m!
+0n!
+1o!
+0p!
+1q!
+0r!
+0s!
+1t!
+0u!
+0v!
+0w!
+1x!
+0y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+0""
+0#"
+0$"
+0%"
+1&"
+0'"
+0("
+0)"
+0*"
+0+"
+0,"
+0-"
+1."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+19"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
+0B"
+0C"
+1D"
+1E"
+0F"
+0G"
+0H"
+0I"
+0J"
+1K"
+1L"
+1M"
+1N"
+1O"
+0P"
+1Q"
+1R"
+0S"
+1T"
+0U"
+0V"
+0W"
+0X"
+0Y"
+1Z"
+1["
+0\"
+0]"
+0^"
+0_"
+0`"
+0a"
+0b"
+0c"
+0d"
+0e"
+0f"
+0g"
+0h"
+0i"
+0j"
+0k"
+0l"
+0m"
+0n"
+0o"
+0p"
+0q"
+0r"
+0s"
+0t"
+0u"
+0v"
+0w"
+0x"
+0y"
+0z"
+0{"
+1|"
+0}"
+0~"
+0!#
+0"#
+0##
+0$#
+0%#
+0&#
+0'#
+0(#
+0)#
+0*#
+0+#
+0,#
+0-#
+0.#
+0/#
+00#
+01#
+02#
+03#
+04#
+05#
+06#
+07#
+08#
+09#
+0:#
+0;#
+0<#
+0=#
+0>#
+0?#
+0@#
+0A#
+0B#
+0C#
+0D#
+0E#
+0F#
+0G#
+0H#
+0I#
+0J#
+0K#
+0L#
+0M#
+0N#
+0O#
+0P#
+0Q#
+0R#
+0S#
+0T#
+0U#
+0V#
+0W#
+0X#
+0Y#
+0Z#
+0[#
+0\#
+0]#
+0^#
+0_#
+0`#
+0a#
+0b#
+0c#
+0d#
+0e#
+0f#
+0g#
+0h#
+0i#
+0j#
+0k#
+0l#
+0m#
+0n#
+0o#
+0p#
+0q#
+0r#
+0s#
+0t#
+0u#
+0v#
+0w#
+0x#
+0y#
+0z#
+0{#
+0|#
+0}#
+0~#
+0!$
+0"$
+0#$
+0$$
+0%$
+0&$
+1'$
+0($
+1)$
+0*$
+0+$
+1,$
+0-$
+0.$
+0/$
+10$
+x1$
+0Q$
+0P$
+0O$
+0N$
+0M$
+0L$
+0K$
+0J$
+0I$
+0H$
+0G$
+0F$
+0E$
+0D$
+0C$
+0B$
+0A$
+0@$
+0?$
+0>$
+0=$
+0<$
+0;$
+0:$
+z9$
+z8$
+z7$
+z6$
+z5$
+z4$
+z3$
+z2$
+0Y$
+0X$
+0W$
+0V$
+0U$
+0T$
+0S$
+0R$
+0a$
+0`$
+0_$
+0^$
+0]$
+0\$
+0[$
+0Z$
+zy$
+zx$
+zw$
+zv$
+zu$
+zt$
+zs$
+zr$
+zq$
+zp$
+zo$
+zn$
+0m$
+zl$
+zk$
+zj$
+zi$
+zh$
+zg$
+zf$
+ze$
+zd$
+zc$
+zb$
+z3%
+z2%
+z1%
+z0%
+z/%
+z.%
+z-%
+z,%
+z+%
+z*%
+z)%
+0(%
+z'%
+z&%
+z%%
+z$%
+z#%
+z"%
+z!%
+z~$
+z}$
+z|$
+z{$
+zz$
+0S%
+0R%
+0Q%
+0P%
+0O%
+0N%
+0M%
+0L%
+0K%
+0J%
+0I%
+0H%
+0G%
+0F%
+0E%
+0D%
+0C%
+0B%
+0A%
+0@%
+0?%
+0>%
+0=%
+0<%
+z;%
+z:%
+z9%
+z8%
+z7%
+z6%
+z5%
+z4%
+0w%
+0v%
+0u%
+0t%
+0s%
+0r%
+0q%
+0p%
+0o%
+0n%
+0m%
+0l%
+0k%
+0j%
+0i%
+0h%
+0g%
+0f%
+0e%
+0d%
+0c%
+0b%
+0a%
+0`%
+0_%
+0^%
+0]%
+0\%
+0[%
+0Z%
+0Y%
+0X%
+0W%
+0V%
+0U%
+0T%
+0!&
+1~%
+0}%
+0|%
+0{%
+0z%
+0y%
+0x%
+0)&
+0(&
+0'&
+0&&
+0%&
+0$&
+0#&
+0"&
+zA&
+z@&
+z?&
+0>&
+0=&
+0<&
+0;&
+z:&
+z9&
+z8&
+z7&
+z6&
+z5&
+z4&
+z3&
+z2&
+z1&
+z0&
+z/&
+z.&
+z-&
+z,&
+z+&
+z*&
+zY&
+zX&
+zW&
+zV&
+zU&
+zT&
+zS&
+zR&
+zQ&
+zP&
+zO&
+zN&
+zM&
+zL&
+zK&
+1J&
+1I&
+0H&
+0G&
+zF&
+zE&
+zD&
+zC&
+zB&
+$end
+#25000
+1!
+1M
+1N
+0.
+1}"
+1S
+0P
+#50000
+0!
+0M
+0N
+1.
+#75000
+1!
+1M
+1N
+0.
+1X$
+1T
+0S
+#100000
+0!
+0M
+0N
+1.
+#125000
+1!
+1M
+1N
+0.
+1U
+0T
+19#
+1a
+09
+1+"
+1u
+0p
+1i
+1f
+1c
+0b
+1:
+1[#
+15"
+1:!
+0v
+0L"
+08!
+1w!
+1x
+0I
+1L!
+1%!
+0|
+13!
+1U#
+1P!
+12#
+0R!
+0R"
+0x!
+0T!
+05!
+0?!
+1#"
+1Q!
+1O!
+1V#
+1s!
+0T"
+0E"
+0t!
+1@"
+1-"
+1B#
+1C"
+1{!
+10#
+0D"
+1+#
+1v"
+1'#
+1H"
+1.#
+1(#
+#150000
+0!
+0M
+0N
+1.
+#175000
+1!
+1M
+1N
+0.
+1D$
+1M$
+1P$
+1L$
+1K$
+1I$
+1H$
+1C$
+1V
+0U
+1J$
+1~"
+09#
+17!
+0u
+0a
+19
+0:!
+1v
+0+"
+1p
+0i
+0f
+0c
+1b
+0:
+0P!
+0[#
+05"
+1L"
+18!
+0w!
+0x
+1I
+0L!
+0%!
+1|
+03!
+0s!
+0U#
+02#
+1R!
+1R"
+1x!
+1T!
+15!
+1?!
+0#"
+0Q!
+07!
+0O!
+00#
+0V#
+1T"
+1E"
+1t!
+0@"
+0-"
+0B#
+0C"
+0{!
+0+#
+1D"
+0v"
+0'#
+0H"
+0.#
+0(#
+#200000
+0!
+0M
+0N
+1.
+#225000
+1!
+1M
+1N
+0.
+1W
+0V
+1W#
+1C#
+1:#
+13#
+11#
+1/#
+1,#
+1*#
+1w"
+1B
+15
+1T#
+1D#
+1;#
+1F#
+1H#
+1J#
+1-#
+1M#
+1C
+#250000
+0!
+0M
+0N
+1.
+#275000
+1!
+1M
+1N
+0.
+1j%
+1n%
+1p%
+1q%
+1r%
+1s%
+1v%
+1o%
+1X
+0W
+1i%
+1X#
+0T#
+1P#
+1N#
+0M#
+1K#
+0J#
+1I#
+0H#
+1E#
+0D#
+1<#
+0;#
+1L#
+0-#
+1@#
+18#
+0*#
+1z"
+0w"
+1Y
+0B
+0W#
+0C#
+03#
+01#
+0/#
+0,#
+05
+1Y#
+0C
+1O#
+1-#
+1J#
+1G#
+0F#
+16#
+1?
+1{"
+1Z#
+1H#
+#300000
+0!
+0M
+0N
+1.
+#325000
+1!
+1M
+1N
+0.
+1h%
+0j%
+1m%
+0n%
+0r%
+0s%
+1t%
+0v%
+1u%
+1k%
+1Z
+0X
+0i%
+1w%
+1`#
+0Z#
+0X#
+1Q#
+0O#
+0P#
+0N#
+1M#
+0G#
+1F#
+0E#
+1=#
+06#
+1.$
+0J#
+0H#
+0:#
+08#
+0-#
+0~"
+0Y
+0Y#
+1C
+0?
+1a#
+0C
+1A
+0Q#
+1O#
+0I#
+1H#
+0F#
+1A#
+0@#
+0<#
+1?
+0`#
+1Z#
+0A
+0K#
+1J#
+1D#
+0=#
+16#
+0a#
+0L#
+1-#
+0A#
+1@#
+0M#
+0D#
+#350000
+0!
+0M
+0N
+1.
+#375000
+1!
+1M
+1N
+0.
+1/$
+0Z
+00$
+0.$
+11$
+0,$
+1&
+0'
+0*
+0+
+0,
+#400000
+0!
+0M
+0N
+1.
+#425000
+1!
+1M
+1N
+0.
+#450000
+0!
+0M
+0N
+1.
+#475000
+1!
+1M
+1N
+0.
+#500000
+0!
+0M
+0N
+1.
+#525000
+1!
+1M
+1N
+0.
+#550000
+0!
+0M
+0N
+1.
+#575000
+1!
+1M
+1N
+0.
+#600000
+0!
+0M
+0N
+1.
+#625000
+1!
+1M
+1N
+0.
+#650000
+0!
+0M
+0N
+1.
+#675000
+1!
+1M
+1N
+0.
+#700000
+0!
+0M
+0N
+1.
+#725000
+1!
+1M
+1N
+0.
+#750000
+0!
+0M
+0N
+1.
+#775000
+1!
+1M
+1N
+0.
+#800000
+0!
+0M
+0N
+1.
+#825000
+1!
+1M
+1N
+0.
+#850000
+0!
+0M
+0N
+1.
+#875000
+1!
+1M
+1N
+0.
+#900000
+0!
+0M
+0N
+1.
+#925000
+1!
+1M
+1N
+0.
+#950000
+0!
+0M
+0N
+1.
+#975000
+1!
+1M
+1N
+0.
+#1000000

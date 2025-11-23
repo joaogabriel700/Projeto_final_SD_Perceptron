@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\multiplicador_24bit\simulation\qsim
+vmultiplicador_24bit
+Z1 !s100 0@`6BO1m7P6[OC[eYT2Xd0
+Z2 I8:J]zR49CUWJ2OODTmgHU0
+Z3 VOFfR:a@cS=_^0iJQ8eZQ^0
+Z4 dC:\altera\13.0sp1\multiplicador_24bit\simulation\qsim
+Z5 w1763831873
+Z6 8multiplicador_24bit.vo
+Z7 Fmultiplicador_24bit.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|multiplicador_24bit.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1763831874.054000
+Z12 !s107 multiplicador_24bit.vo|
+!s101 -O0
+vmultiplicador_24bit_vlg_check_tst
+!i10b 1
+Z13 !s100 4G0_<<MJKCH73k<;6OS=[0
+Z14 I?LE6QPUG]Y_?^V:=SDl]_1
+Z15 VV4H6:PQ?bNgREa[L_25g@2
+R4
+R5
+Z16 8multiplicador_24bit.vt
+Z17 Fmultiplicador_24bit.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z18 !s108 1763831874.108000
+Z19 !s107 multiplicador_24bit.vt|
+Z20 !s90 -work|work|multiplicador_24bit.vt|
+!s101 -O0
+R10
+vmultiplicador_24bit_vlg_sample_tst
+!i10b 1
+Z21 !s100 o83[bk267eQgngdn9T=eR0
+Z22 IHibzcQ>Z5K^L@n5F501?]0
+Z23 VG62ZRQd:V1Cd@biamP=K43
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vmultiplicador_24bit_vlg_vec_tst
+!i10b 1
+!s100 B<gOD[zS@8z>S>XVfEJPA0
+IgJCmdABnSfS;QTTCOlDSh0
+Z24 ViRY7eH_5T9Eg;`n:7`z2K0
+R4
+R5
+R16
+R17
+Z25 L0 567
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\mux_2x1_8bit\simulation\qsim
+vmux_2x1_8bit
+Z1 !s100 ^6Hk7Wc11H_Xo`dXPITgE0
+Z2 IL34;768n8fXOD;>z3e?Z82
+Z3 VY>GdoEOhOIO0R?a>:U4D63
+Z4 dC:\altera\13.0sp1\mux_2x1_8bit\simulation\qsim
+Z5 w1763784017
+Z6 8mux_2x1_8bit.vo
+Z7 Fmux_2x1_8bit.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|mux_2x1_8bit.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1763784018.280000
+Z12 !s107 mux_2x1_8bit.vo|
+!s101 -O0
+vmux_2x1_8bit_vlg_check_tst
+!i10b 1
+Z13 !s100 3@DVD8N:d<3k=mYmn3=CN1
+Z14 INYbL0mfbW3]G5Jg>>U;@>1
+Z15 V?91>17eQ6iH4R@CS5GoSC0
+R4
+R5
+Z16 8mux_2x1_8bit.vt
+Z17 Fmux_2x1_8bit.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z18 !s108 1763784018.325000
+Z19 !s107 mux_2x1_8bit.vt|
+Z20 !s90 -work|work|mux_2x1_8bit.vt|
+!s101 -O0
+R10
+vmux_2x1_8bit_vlg_sample_tst
+!i10b 1
+Z21 !s100 XQi:7[f^@@XZm`gFEK7A71
+Z22 IcXeFVYXd:XYWZ?h>kNbJY0
+Z23 VUY:F:aF<XBe223eE=cl7^0
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vmux_2x1_8bit_vlg_vec_tst
+!i10b 1
+!s100 Rc=JISDF?kXOU7aW7L@RT3
+I`mbD2U_X<Db0VN^icCX;K2
+Z24 VBVC9;6<dUEQXh:]W7D7zG2
+R4
+R5
+R16
+R17
+Z25 L0 281
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

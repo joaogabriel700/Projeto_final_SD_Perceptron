@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\perceptron\simulation\qsim
+vperceptron
+Z1 IAR^KQNBEKiH;^OmNVKo_33
+Z2 V>BLJD>SXBP>JdiEUeGY1J3
+Z3 dC:\altera\13.0sp1\perceptron\simulation\qsim
+Z4 w1763870492
+Z5 8perceptron.vo
+Z6 Fperceptron.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|perceptron.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 @7F7CcX6Ol68HZEDmEnXk1
+!s85 0
+Z11 !s108 1763870493.195000
+Z12 !s107 perceptron.vo|
+!s101 -O0
+vperceptron_vlg_check_tst
+!i10b 1
+Z13 !s100 iG[]j<YFNBa0d1?YiDNIA3
+Z14 Iefo4PUYQGF2<9GaQ>QEg90
+Z15 VGB]R0NShP:9nT=EC_]oK11
+R3
+R4
+Z16 8perceptron.vt
+Z17 Fperceptron.vt
+L0 65
+R7
+r1
+!s85 0
+31
+Z18 !s108 1763870493.271000
+Z19 !s107 perceptron.vt|
+Z20 !s90 -work|work|perceptron.vt|
+!s101 -O0
+R9
+vperceptron_vlg_sample_tst
+!i10b 1
+Z21 !s100 ^c0K7hQH?AGX@^[6Sk=AK1
+Z22 I^HX>9OgJ8JRKKl48IdGRH1
+Z23 V>]U`XW>gPBM7JX1^g<BD[0
+R3
+R4
+R16
+R17
+L0 29
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9
+vperceptron_vlg_vec_tst
+!i10b 1
+!s100 RaLTo@4gmdFFRQi7OLl5H2
+INFnFnObG8BhmK694fML>81
+Z24 Vk<SA@a[?E772]A5:zzT`91
+R3
+R4
+R16
+R17
+Z25 L0 349
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9

@@ -1,0 +1,6074 @@
+|perceptron
+clk => register_8:registra_x.clk
+clk => register_8:registra_y.clk
+clk => register_32:registrador_1.clk
+clk => register_32:registrador_2.clk
+clk => register_36:acumulador.clk
+clk => currentstate~1.DATAIN
+rst => register_8:registra_x.rst
+rst => register_8:registra_y.rst
+rst => register_32:registrador_1.rst
+rst => register_32:registrador_2.rst
+rst => currentstate~3.DATAIN
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+start => nextstate.OUTPUTSELECT
+switch_in_x[0] => register_8:registra_x.D[0]
+switch_in_x[1] => register_8:registra_x.D[1]
+switch_in_x[2] => register_8:registra_x.D[2]
+switch_in_x[3] => register_8:registra_x.D[3]
+switch_in_x[4] => register_8:registra_x.D[4]
+switch_in_x[5] => register_8:registra_x.D[5]
+switch_in_x[6] => register_8:registra_x.D[6]
+switch_in_x[7] => register_8:registra_x.D[7]
+switch_in_y[0] => register_8:registra_y.D[0]
+switch_in_y[1] => register_8:registra_y.D[1]
+switch_in_y[2] => register_8:registra_y.D[2]
+switch_in_y[3] => register_8:registra_y.D[3]
+switch_in_y[4] => register_8:registra_y.D[4]
+switch_in_y[5] => register_8:registra_y.D[5]
+switch_in_y[6] => register_8:registra_y.D[6]
+switch_in_y[7] => register_8:registra_y.D[7]
+led_saida <= s_led.DB_MAX_OUTPUT_PORT_TYPE
+seg_0 <= decoder_7seg:decoder.s0
+seg_1 <= decoder_7seg:decoder.s1
+seg_2 <= decoder_7seg:decoder.s2
+seg_3 <= decoder_7seg:decoder.s3
+seg_4 <= decoder_7seg:decoder.s4
+seg_5 <= decoder_7seg:decoder.s5
+seg_6 <= decoder_7seg:decoder.s6
+
+
+|perceptron|rom_3x16:memroria_rom
+adress[0] => Mux0.IN5
+adress[0] => Mux1.IN5
+adress[1] => Mux0.IN4
+adress[1] => Mux1.IN4
+adress[1] => dado_out[13].DATAIN
+adress[1] => dado_out[12].DATAIN
+adress[1] => dado_out[8].DATAIN
+adress[1] => dado_out[7].DATAIN
+adress[1] => dado_out[6].DATAIN
+adress[1] => dado_out[4].DATAIN
+adress[1] => dado_out[3].DATAIN
+adress[1] => dado_out[0].DATAIN
+dado_out[0] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+dado_out[2] <= <GND>
+dado_out[3] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[4] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+dado_out[6] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[7] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[8] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[9] <= <GND>
+dado_out[10] <= <GND>
+dado_out[11] <= <GND>
+dado_out[12] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[13] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[14] <= <GND>
+dado_out[15] <= <GND>
+
+
+|perceptron|register_8:registra_x
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+rst => Q[4]~reg0.ACLR
+rst => Q[5]~reg0.ACLR
+rst => Q[6]~reg0.ACLR
+rst => Q[7]~reg0.ACLR
+load => Q[7]~reg0.ENA
+load => Q[6]~reg0.ENA
+load => Q[5]~reg0.ENA
+load => Q[4]~reg0.ENA
+load => Q[3]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|register_8:registra_y
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+rst => Q[4]~reg0.ACLR
+rst => Q[5]~reg0.ACLR
+rst => Q[6]~reg0.ACLR
+rst => Q[7]~reg0.ACLR
+load => Q[7]~reg0.ENA
+load => Q[6]~reg0.ENA
+load => Q[5]~reg0.ENA
+load => Q[4]~reg0.ENA
+load => Q[3]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|mux_2x1_8bit:seleciona_multi
+reg_x[0] => d.IN0
+reg_x[1] => d.IN0
+reg_x[2] => d.IN0
+reg_x[3] => d.IN0
+reg_x[4] => d.IN0
+reg_x[5] => d.IN0
+reg_x[6] => d.IN0
+reg_x[7] => d.IN0
+reg_y[0] => d.IN0
+reg_y[1] => d.IN0
+reg_y[2] => d.IN0
+reg_y[3] => d.IN0
+reg_y[4] => d.IN0
+reg_y[5] => d.IN0
+reg_y[6] => d.IN0
+reg_y[7] => d.IN0
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+select_m => d.IN1
+d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[6] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[7] <= d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica
+in_a[0] => corretor_sinal:corrige_a.entrada[0]
+in_a[1] => corretor_sinal:corrige_a.entrada[1]
+in_a[2] => corretor_sinal:corrige_a.entrada[2]
+in_a[3] => corretor_sinal:corrige_a.entrada[3]
+in_a[4] => corretor_sinal:corrige_a.entrada[4]
+in_a[5] => corretor_sinal:corrige_a.entrada[5]
+in_a[6] => corretor_sinal:corrige_a.entrada[6]
+in_a[7] => corretor_sinal:corrige_a.entrada[7]
+in_a[8] => corretor_sinal:corrige_a.entrada[8]
+in_a[9] => corretor_sinal:corrige_a.entrada[9]
+in_a[10] => corretor_sinal:corrige_a.entrada[10]
+in_a[11] => corretor_sinal:corrige_a.entrada[11]
+in_a[12] => corretor_sinal:corrige_a.entrada[12]
+in_a[13] => corretor_sinal:corrige_a.entrada[13]
+in_a[14] => corretor_sinal:corrige_a.entrada[14]
+in_a[15] => sinal_f.IN0
+in_a[15] => corretor_sinal:corrige_a.entrada[23]
+in_a[15] => corretor_sinal:corrige_a.entrada[22]
+in_a[15] => corretor_sinal:corrige_a.entrada[21]
+in_a[15] => corretor_sinal:corrige_a.entrada[20]
+in_a[15] => corretor_sinal:corrige_a.entrada[19]
+in_a[15] => corretor_sinal:corrige_a.entrada[18]
+in_a[15] => corretor_sinal:corrige_a.entrada[17]
+in_a[15] => corretor_sinal:corrige_a.entrada[16]
+in_a[15] => corretor_sinal:corrige_a.entrada[15]
+in_a[15] => corretor_sinal:corrige_a.comp
+in_b[0] => corretor_sinal:corrige_b.entrada[0]
+in_b[1] => corretor_sinal:corrige_b.entrada[1]
+in_b[2] => corretor_sinal:corrige_b.entrada[2]
+in_b[3] => corretor_sinal:corrige_b.entrada[3]
+in_b[4] => corretor_sinal:corrige_b.entrada[4]
+in_b[5] => corretor_sinal:corrige_b.entrada[5]
+in_b[6] => corretor_sinal:corrige_b.entrada[6]
+in_b[7] => sinal_f.IN1
+in_b[7] => corretor_sinal:corrige_b.entrada[23]
+in_b[7] => corretor_sinal:corrige_b.entrada[22]
+in_b[7] => corretor_sinal:corrige_b.entrada[21]
+in_b[7] => corretor_sinal:corrige_b.entrada[20]
+in_b[7] => corretor_sinal:corrige_b.entrada[19]
+in_b[7] => corretor_sinal:corrige_b.entrada[18]
+in_b[7] => corretor_sinal:corrige_b.entrada[17]
+in_b[7] => corretor_sinal:corrige_b.entrada[16]
+in_b[7] => corretor_sinal:corrige_b.entrada[15]
+in_b[7] => corretor_sinal:corrige_b.entrada[14]
+in_b[7] => corretor_sinal:corrige_b.entrada[13]
+in_b[7] => corretor_sinal:corrige_b.entrada[12]
+in_b[7] => corretor_sinal:corrige_b.entrada[11]
+in_b[7] => corretor_sinal:corrige_b.entrada[10]
+in_b[7] => corretor_sinal:corrige_b.entrada[9]
+in_b[7] => corretor_sinal:corrige_b.entrada[8]
+in_b[7] => corretor_sinal:corrige_b.entrada[7]
+in_b[7] => corretor_sinal:corrige_b.comp
+resultado[0] <= corretor_sinal:corrige_saida.saida[0]
+resultado[1] <= corretor_sinal:corrige_saida.saida[1]
+resultado[2] <= corretor_sinal:corrige_saida.saida[2]
+resultado[3] <= corretor_sinal:corrige_saida.saida[3]
+resultado[4] <= corretor_sinal:corrige_saida.saida[4]
+resultado[5] <= corretor_sinal:corrige_saida.saida[5]
+resultado[6] <= corretor_sinal:corrige_saida.saida[6]
+resultado[7] <= corretor_sinal:corrige_saida.saida[7]
+resultado[8] <= corretor_sinal:corrige_saida.saida[8]
+resultado[9] <= corretor_sinal:corrige_saida.saida[9]
+resultado[10] <= corretor_sinal:corrige_saida.saida[10]
+resultado[11] <= corretor_sinal:corrige_saida.saida[11]
+resultado[12] <= corretor_sinal:corrige_saida.saida[12]
+resultado[13] <= corretor_sinal:corrige_saida.saida[13]
+resultado[14] <= corretor_sinal:corrige_saida.saida[14]
+resultado[15] <= corretor_sinal:corrige_saida.saida[15]
+resultado[16] <= corretor_sinal:corrige_saida.saida[16]
+resultado[17] <= corretor_sinal:corrige_saida.saida[17]
+resultado[18] <= corretor_sinal:corrige_saida.saida[18]
+resultado[19] <= corretor_sinal:corrige_saida.saida[19]
+resultado[20] <= corretor_sinal:corrige_saida.saida[20]
+resultado[21] <= corretor_sinal:corrige_saida.saida[21]
+resultado[22] <= corretor_sinal:corrige_saida.saida[22]
+resultado[23] <= corretor_sinal:corrige_saida.saida[23]
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a
+entrada[0] => invert[0].IN0
+entrada[1] => invert[1].IN0
+entrada[2] => invert[2].IN0
+entrada[3] => invert[3].IN0
+entrada[4] => invert[4].IN0
+entrada[5] => invert[5].IN0
+entrada[6] => invert[6].IN0
+entrada[7] => invert[7].IN0
+entrada[8] => invert[8].IN0
+entrada[9] => invert[9].IN0
+entrada[10] => invert[10].IN0
+entrada[11] => invert[11].IN0
+entrada[12] => invert[12].IN0
+entrada[13] => invert[13].IN0
+entrada[14] => invert[14].IN0
+entrada[15] => invert[15].IN0
+entrada[16] => invert[16].IN0
+entrada[17] => invert[17].IN0
+entrada[18] => invert[18].IN0
+entrada[19] => invert[19].IN0
+entrada[20] => invert[20].IN0
+entrada[21] => invert[21].IN0
+entrada[22] => invert[22].IN0
+entrada[23] => invert[23].IN0
+comp => invert[0].IN1
+comp => invert[1].IN1
+comp => invert[2].IN1
+comp => invert[3].IN1
+comp => invert[4].IN1
+comp => invert[5].IN1
+comp => invert[6].IN1
+comp => invert[7].IN1
+comp => invert[8].IN1
+comp => invert[9].IN1
+comp => invert[10].IN1
+comp => invert[11].IN1
+comp => invert[12].IN1
+comp => invert[13].IN1
+comp => invert[14].IN1
+comp => invert[15].IN1
+comp => invert[16].IN1
+comp => invert[17].IN1
+comp => invert[18].IN1
+comp => invert[19].IN1
+comp => invert[20].IN1
+comp => invert[21].IN1
+comp => invert[22].IN1
+comp => invert[23].IN1
+comp => somador:u0.ci
+saida[0] <= somador:u0.s
+saida[1] <= somador:u1.s
+saida[2] <= somador:u2.s
+saida[3] <= somador:u3.s
+saida[4] <= somador:u4.s
+saida[5] <= somador:u5.s
+saida[6] <= somador:u6.s
+saida[7] <= somador:u7.s
+saida[8] <= somador:u8.s
+saida[9] <= somador:u9.s
+saida[10] <= somador:u10.s
+saida[11] <= somador:u11.s
+saida[12] <= somador:u12.s
+saida[13] <= somador:u13.s
+saida[14] <= somador:u14.s
+saida[15] <= somador:u15.s
+saida[16] <= somador:u16.s
+saida[17] <= somador:u17.s
+saida[18] <= somador:u18.s
+saida[19] <= somador:u19.s
+saida[20] <= somador:u20.s
+saida[21] <= somador:u21.s
+saida[22] <= somador:u22.s
+saida[23] <= somador:u23.s
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_a|somador:u23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b
+entrada[0] => invert[0].IN0
+entrada[1] => invert[1].IN0
+entrada[2] => invert[2].IN0
+entrada[3] => invert[3].IN0
+entrada[4] => invert[4].IN0
+entrada[5] => invert[5].IN0
+entrada[6] => invert[6].IN0
+entrada[7] => invert[7].IN0
+entrada[8] => invert[8].IN0
+entrada[9] => invert[9].IN0
+entrada[10] => invert[10].IN0
+entrada[11] => invert[11].IN0
+entrada[12] => invert[12].IN0
+entrada[13] => invert[13].IN0
+entrada[14] => invert[14].IN0
+entrada[15] => invert[15].IN0
+entrada[16] => invert[16].IN0
+entrada[17] => invert[17].IN0
+entrada[18] => invert[18].IN0
+entrada[19] => invert[19].IN0
+entrada[20] => invert[20].IN0
+entrada[21] => invert[21].IN0
+entrada[22] => invert[22].IN0
+entrada[23] => invert[23].IN0
+comp => invert[0].IN1
+comp => invert[1].IN1
+comp => invert[2].IN1
+comp => invert[3].IN1
+comp => invert[4].IN1
+comp => invert[5].IN1
+comp => invert[6].IN1
+comp => invert[7].IN1
+comp => invert[8].IN1
+comp => invert[9].IN1
+comp => invert[10].IN1
+comp => invert[11].IN1
+comp => invert[12].IN1
+comp => invert[13].IN1
+comp => invert[14].IN1
+comp => invert[15].IN1
+comp => invert[16].IN1
+comp => invert[17].IN1
+comp => invert[18].IN1
+comp => invert[19].IN1
+comp => invert[20].IN1
+comp => invert[21].IN1
+comp => invert[22].IN1
+comp => invert[23].IN1
+comp => somador:u0.ci
+saida[0] <= somador:u0.s
+saida[1] <= somador:u1.s
+saida[2] <= somador:u2.s
+saida[3] <= somador:u3.s
+saida[4] <= somador:u4.s
+saida[5] <= somador:u5.s
+saida[6] <= somador:u6.s
+saida[7] <= somador:u7.s
+saida[8] <= somador:u8.s
+saida[9] <= somador:u9.s
+saida[10] <= somador:u10.s
+saida[11] <= somador:u11.s
+saida[12] <= somador:u12.s
+saida[13] <= somador:u13.s
+saida[14] <= somador:u14.s
+saida[15] <= somador:u15.s
+saida[16] <= somador:u16.s
+saida[17] <= somador:u17.s
+saida[18] <= somador:u18.s
+saida[19] <= somador:u19.s
+saida[20] <= somador:u20.s
+saida[21] <= somador:u21.s
+saida[22] <= somador:u22.s
+saida[23] <= somador:u23.s
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_b|somador:u23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica
+dados[0] => pp0[0].IN0
+dados[0] => pp1[1].IN0
+dados[0] => pp2[2].IN0
+dados[0] => pp3[3].IN0
+dados[0] => pp4[4].IN0
+dados[0] => pp5[5].IN0
+dados[0] => pp6[6].IN0
+dados[0] => pp7[7].IN0
+dados[1] => pp0[1].IN0
+dados[1] => pp1[2].IN0
+dados[1] => pp2[3].IN0
+dados[1] => pp3[4].IN0
+dados[1] => pp4[5].IN0
+dados[1] => pp5[6].IN0
+dados[1] => pp6[7].IN0
+dados[1] => pp7[8].IN0
+dados[2] => pp0[2].IN0
+dados[2] => pp1[3].IN0
+dados[2] => pp2[4].IN0
+dados[2] => pp3[5].IN0
+dados[2] => pp4[6].IN0
+dados[2] => pp5[7].IN0
+dados[2] => pp6[8].IN0
+dados[2] => pp7[9].IN0
+dados[3] => pp0[3].IN0
+dados[3] => pp1[4].IN0
+dados[3] => pp2[5].IN0
+dados[3] => pp3[6].IN0
+dados[3] => pp4[7].IN0
+dados[3] => pp5[8].IN0
+dados[3] => pp6[9].IN0
+dados[3] => pp7[10].IN0
+dados[4] => pp0[4].IN0
+dados[4] => pp1[5].IN0
+dados[4] => pp2[6].IN0
+dados[4] => pp3[7].IN0
+dados[4] => pp4[8].IN0
+dados[4] => pp5[9].IN0
+dados[4] => pp6[10].IN0
+dados[4] => pp7[11].IN0
+dados[5] => pp0[5].IN0
+dados[5] => pp1[6].IN0
+dados[5] => pp2[7].IN0
+dados[5] => pp3[8].IN0
+dados[5] => pp4[9].IN0
+dados[5] => pp5[10].IN0
+dados[5] => pp6[11].IN0
+dados[5] => pp7[12].IN0
+dados[6] => pp0[6].IN0
+dados[6] => pp1[7].IN0
+dados[6] => pp2[8].IN0
+dados[6] => pp3[9].IN0
+dados[6] => pp4[10].IN0
+dados[6] => pp5[11].IN0
+dados[6] => pp6[12].IN0
+dados[6] => pp7[13].IN0
+dados[7] => pp0[7].IN0
+dados[7] => pp1[8].IN0
+dados[7] => pp2[9].IN0
+dados[7] => pp3[10].IN0
+dados[7] => pp4[11].IN0
+dados[7] => pp5[12].IN0
+dados[7] => pp6[13].IN0
+dados[7] => pp7[14].IN0
+dados[8] => pp0[8].IN0
+dados[8] => pp1[9].IN0
+dados[8] => pp2[10].IN0
+dados[8] => pp3[11].IN0
+dados[8] => pp4[12].IN0
+dados[8] => pp5[13].IN0
+dados[8] => pp6[14].IN0
+dados[8] => pp7[15].IN0
+dados[9] => pp0[9].IN0
+dados[9] => pp1[10].IN0
+dados[9] => pp2[11].IN0
+dados[9] => pp3[12].IN0
+dados[9] => pp4[13].IN0
+dados[9] => pp5[14].IN0
+dados[9] => pp6[15].IN0
+dados[9] => pp7[16].IN0
+dados[10] => pp0[10].IN0
+dados[10] => pp1[11].IN0
+dados[10] => pp2[12].IN0
+dados[10] => pp3[13].IN0
+dados[10] => pp4[14].IN0
+dados[10] => pp5[15].IN0
+dados[10] => pp6[16].IN0
+dados[10] => pp7[17].IN0
+dados[11] => pp0[11].IN0
+dados[11] => pp1[12].IN0
+dados[11] => pp2[13].IN0
+dados[11] => pp3[14].IN0
+dados[11] => pp4[15].IN0
+dados[11] => pp5[16].IN0
+dados[11] => pp6[17].IN0
+dados[11] => pp7[18].IN0
+dados[12] => pp0[12].IN0
+dados[12] => pp1[13].IN0
+dados[12] => pp2[14].IN0
+dados[12] => pp3[15].IN0
+dados[12] => pp4[16].IN0
+dados[12] => pp5[17].IN0
+dados[12] => pp6[18].IN0
+dados[12] => pp7[19].IN0
+dados[13] => pp0[13].IN0
+dados[13] => pp1[14].IN0
+dados[13] => pp2[15].IN0
+dados[13] => pp3[16].IN0
+dados[13] => pp4[17].IN0
+dados[13] => pp5[18].IN0
+dados[13] => pp6[19].IN0
+dados[13] => pp7[20].IN0
+dados[14] => pp0[14].IN0
+dados[14] => pp1[15].IN0
+dados[14] => pp2[16].IN0
+dados[14] => pp3[17].IN0
+dados[14] => pp4[18].IN0
+dados[14] => pp5[19].IN0
+dados[14] => pp6[20].IN0
+dados[14] => pp7[21].IN0
+dados[15] => pp0[15].IN0
+dados[15] => pp1[16].IN0
+dados[15] => pp2[17].IN0
+dados[15] => pp3[18].IN0
+dados[15] => pp4[19].IN0
+dados[15] => pp5[20].IN0
+dados[15] => pp6[21].IN0
+dados[15] => pp7[22].IN0
+inp[0] => pp0[0].IN1
+inp[0] => pp0[1].IN1
+inp[0] => pp0[2].IN1
+inp[0] => pp0[3].IN1
+inp[0] => pp0[4].IN1
+inp[0] => pp0[5].IN1
+inp[0] => pp0[6].IN1
+inp[0] => pp0[7].IN1
+inp[0] => pp0[8].IN1
+inp[0] => pp0[9].IN1
+inp[0] => pp0[10].IN1
+inp[0] => pp0[11].IN1
+inp[0] => pp0[12].IN1
+inp[0] => pp0[13].IN1
+inp[0] => pp0[14].IN1
+inp[0] => pp0[15].IN1
+inp[1] => pp1[1].IN1
+inp[1] => pp1[2].IN1
+inp[1] => pp1[3].IN1
+inp[1] => pp1[4].IN1
+inp[1] => pp1[5].IN1
+inp[1] => pp1[6].IN1
+inp[1] => pp1[7].IN1
+inp[1] => pp1[8].IN1
+inp[1] => pp1[9].IN1
+inp[1] => pp1[10].IN1
+inp[1] => pp1[11].IN1
+inp[1] => pp1[12].IN1
+inp[1] => pp1[13].IN1
+inp[1] => pp1[14].IN1
+inp[1] => pp1[15].IN1
+inp[1] => pp1[16].IN1
+inp[2] => pp2[2].IN1
+inp[2] => pp2[3].IN1
+inp[2] => pp2[4].IN1
+inp[2] => pp2[5].IN1
+inp[2] => pp2[6].IN1
+inp[2] => pp2[7].IN1
+inp[2] => pp2[8].IN1
+inp[2] => pp2[9].IN1
+inp[2] => pp2[10].IN1
+inp[2] => pp2[11].IN1
+inp[2] => pp2[12].IN1
+inp[2] => pp2[13].IN1
+inp[2] => pp2[14].IN1
+inp[2] => pp2[15].IN1
+inp[2] => pp2[16].IN1
+inp[2] => pp2[17].IN1
+inp[3] => pp3[3].IN1
+inp[3] => pp3[4].IN1
+inp[3] => pp3[5].IN1
+inp[3] => pp3[6].IN1
+inp[3] => pp3[7].IN1
+inp[3] => pp3[8].IN1
+inp[3] => pp3[9].IN1
+inp[3] => pp3[10].IN1
+inp[3] => pp3[11].IN1
+inp[3] => pp3[12].IN1
+inp[3] => pp3[13].IN1
+inp[3] => pp3[14].IN1
+inp[3] => pp3[15].IN1
+inp[3] => pp3[16].IN1
+inp[3] => pp3[17].IN1
+inp[3] => pp3[18].IN1
+inp[4] => pp4[4].IN1
+inp[4] => pp4[5].IN1
+inp[4] => pp4[6].IN1
+inp[4] => pp4[7].IN1
+inp[4] => pp4[8].IN1
+inp[4] => pp4[9].IN1
+inp[4] => pp4[10].IN1
+inp[4] => pp4[11].IN1
+inp[4] => pp4[12].IN1
+inp[4] => pp4[13].IN1
+inp[4] => pp4[14].IN1
+inp[4] => pp4[15].IN1
+inp[4] => pp4[16].IN1
+inp[4] => pp4[17].IN1
+inp[4] => pp4[18].IN1
+inp[4] => pp4[19].IN1
+inp[5] => pp5[5].IN1
+inp[5] => pp5[6].IN1
+inp[5] => pp5[7].IN1
+inp[5] => pp5[8].IN1
+inp[5] => pp5[9].IN1
+inp[5] => pp5[10].IN1
+inp[5] => pp5[11].IN1
+inp[5] => pp5[12].IN1
+inp[5] => pp5[13].IN1
+inp[5] => pp5[14].IN1
+inp[5] => pp5[15].IN1
+inp[5] => pp5[16].IN1
+inp[5] => pp5[17].IN1
+inp[5] => pp5[18].IN1
+inp[5] => pp5[19].IN1
+inp[5] => pp5[20].IN1
+inp[6] => pp6[6].IN1
+inp[6] => pp6[7].IN1
+inp[6] => pp6[8].IN1
+inp[6] => pp6[9].IN1
+inp[6] => pp6[10].IN1
+inp[6] => pp6[11].IN1
+inp[6] => pp6[12].IN1
+inp[6] => pp6[13].IN1
+inp[6] => pp6[14].IN1
+inp[6] => pp6[15].IN1
+inp[6] => pp6[16].IN1
+inp[6] => pp6[17].IN1
+inp[6] => pp6[18].IN1
+inp[6] => pp6[19].IN1
+inp[6] => pp6[20].IN1
+inp[6] => pp6[21].IN1
+inp[7] => pp7[7].IN1
+inp[7] => pp7[8].IN1
+inp[7] => pp7[9].IN1
+inp[7] => pp7[10].IN1
+inp[7] => pp7[11].IN1
+inp[7] => pp7[12].IN1
+inp[7] => pp7[13].IN1
+inp[7] => pp7[14].IN1
+inp[7] => pp7[15].IN1
+inp[7] => pp7[16].IN1
+inp[7] => pp7[17].IN1
+inp[7] => pp7[18].IN1
+inp[7] => pp7[19].IN1
+inp[7] => pp7[20].IN1
+inp[7] => pp7[21].IN1
+inp[7] => pp7[22].IN1
+P[0] <= somador_24bit:soma7.S[0]
+P[1] <= somador_24bit:soma7.S[1]
+P[2] <= somador_24bit:soma7.S[2]
+P[3] <= somador_24bit:soma7.S[3]
+P[4] <= somador_24bit:soma7.S[4]
+P[5] <= somador_24bit:soma7.S[5]
+P[6] <= somador_24bit:soma7.S[6]
+P[7] <= somador_24bit:soma7.S[7]
+P[8] <= somador_24bit:soma7.S[8]
+P[9] <= somador_24bit:soma7.S[9]
+P[10] <= somador_24bit:soma7.S[10]
+P[11] <= somador_24bit:soma7.S[11]
+P[12] <= somador_24bit:soma7.S[12]
+P[13] <= somador_24bit:soma7.S[13]
+P[14] <= somador_24bit:soma7.S[14]
+P[15] <= somador_24bit:soma7.S[15]
+P[16] <= somador_24bit:soma7.S[16]
+P[17] <= somador_24bit:soma7.S[17]
+P[18] <= somador_24bit:soma7.S[18]
+P[19] <= somador_24bit:soma7.S[19]
+P[20] <= somador_24bit:soma7.S[20]
+P[21] <= somador_24bit:soma7.S[21]
+P[22] <= somador_24bit:soma7.S[22]
+P[23] <= somador_24bit:soma7.S[23]
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma1|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma2|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma3|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma4|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma5|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma6|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|multiplicador_24bit:multiplica|somador_24bit:soma7|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida
+entrada[0] => invert[0].IN0
+entrada[1] => invert[1].IN0
+entrada[2] => invert[2].IN0
+entrada[3] => invert[3].IN0
+entrada[4] => invert[4].IN0
+entrada[5] => invert[5].IN0
+entrada[6] => invert[6].IN0
+entrada[7] => invert[7].IN0
+entrada[8] => invert[8].IN0
+entrada[9] => invert[9].IN0
+entrada[10] => invert[10].IN0
+entrada[11] => invert[11].IN0
+entrada[12] => invert[12].IN0
+entrada[13] => invert[13].IN0
+entrada[14] => invert[14].IN0
+entrada[15] => invert[15].IN0
+entrada[16] => invert[16].IN0
+entrada[17] => invert[17].IN0
+entrada[18] => invert[18].IN0
+entrada[19] => invert[19].IN0
+entrada[20] => invert[20].IN0
+entrada[21] => invert[21].IN0
+entrada[22] => invert[22].IN0
+entrada[23] => invert[23].IN0
+comp => invert[0].IN1
+comp => invert[1].IN1
+comp => invert[2].IN1
+comp => invert[3].IN1
+comp => invert[4].IN1
+comp => invert[5].IN1
+comp => invert[6].IN1
+comp => invert[7].IN1
+comp => invert[8].IN1
+comp => invert[9].IN1
+comp => invert[10].IN1
+comp => invert[11].IN1
+comp => invert[12].IN1
+comp => invert[13].IN1
+comp => invert[14].IN1
+comp => invert[15].IN1
+comp => invert[16].IN1
+comp => invert[17].IN1
+comp => invert[18].IN1
+comp => invert[19].IN1
+comp => invert[20].IN1
+comp => invert[21].IN1
+comp => invert[22].IN1
+comp => invert[23].IN1
+comp => somador:u0.ci
+saida[0] <= somador:u0.s
+saida[1] <= somador:u1.s
+saida[2] <= somador:u2.s
+saida[3] <= somador:u3.s
+saida[4] <= somador:u4.s
+saida[5] <= somador:u5.s
+saida[6] <= somador:u6.s
+saida[7] <= somador:u7.s
+saida[8] <= somador:u8.s
+saida[9] <= somador:u9.s
+saida[10] <= somador:u10.s
+saida[11] <= somador:u11.s
+saida[12] <= somador:u12.s
+saida[13] <= somador:u13.s
+saida[14] <= somador:u14.s
+saida[15] <= somador:u15.s
+saida[16] <= somador:u16.s
+saida[17] <= somador:u17.s
+saida[18] <= somador:u18.s
+saida[19] <= somador:u19.s
+saida[20] <= somador:u20.s
+saida[21] <= somador:u21.s
+saida[22] <= somador:u22.s
+saida[23] <= somador:u23.s
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|multiplicador_completo:multiplica|corretor_sinal:corrige_saida|somador:u23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|register_32:registrador_1
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+clk => Q[8]~reg0.CLK
+clk => Q[9]~reg0.CLK
+clk => Q[10]~reg0.CLK
+clk => Q[11]~reg0.CLK
+clk => Q[12]~reg0.CLK
+clk => Q[13]~reg0.CLK
+clk => Q[14]~reg0.CLK
+clk => Q[15]~reg0.CLK
+clk => Q[16]~reg0.CLK
+clk => Q[17]~reg0.CLK
+clk => Q[18]~reg0.CLK
+clk => Q[19]~reg0.CLK
+clk => Q[20]~reg0.CLK
+clk => Q[21]~reg0.CLK
+clk => Q[22]~reg0.CLK
+clk => Q[23]~reg0.CLK
+clk => Q[24]~reg0.CLK
+clk => Q[25]~reg0.CLK
+clk => Q[26]~reg0.CLK
+clk => Q[27]~reg0.CLK
+clk => Q[28]~reg0.CLK
+clk => Q[29]~reg0.CLK
+clk => Q[30]~reg0.CLK
+clk => Q[31]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+rst => Q[4]~reg0.ACLR
+rst => Q[5]~reg0.ACLR
+rst => Q[6]~reg0.ACLR
+rst => Q[7]~reg0.ACLR
+rst => Q[8]~reg0.ACLR
+rst => Q[9]~reg0.ACLR
+rst => Q[10]~reg0.ACLR
+rst => Q[11]~reg0.ACLR
+rst => Q[12]~reg0.ACLR
+rst => Q[13]~reg0.ACLR
+rst => Q[14]~reg0.ACLR
+rst => Q[15]~reg0.ACLR
+rst => Q[16]~reg0.ACLR
+rst => Q[17]~reg0.ACLR
+rst => Q[18]~reg0.ACLR
+rst => Q[19]~reg0.ACLR
+rst => Q[20]~reg0.ACLR
+rst => Q[21]~reg0.ACLR
+rst => Q[22]~reg0.ACLR
+rst => Q[23]~reg0.ACLR
+rst => Q[24]~reg0.ACLR
+rst => Q[25]~reg0.ACLR
+rst => Q[26]~reg0.ACLR
+rst => Q[27]~reg0.ACLR
+rst => Q[28]~reg0.ACLR
+rst => Q[29]~reg0.ACLR
+rst => Q[30]~reg0.ACLR
+rst => Q[31]~reg0.ACLR
+load => Q[31]~reg0.ENA
+load => Q[30]~reg0.ENA
+load => Q[29]~reg0.ENA
+load => Q[28]~reg0.ENA
+load => Q[27]~reg0.ENA
+load => Q[26]~reg0.ENA
+load => Q[25]~reg0.ENA
+load => Q[24]~reg0.ENA
+load => Q[23]~reg0.ENA
+load => Q[22]~reg0.ENA
+load => Q[21]~reg0.ENA
+load => Q[20]~reg0.ENA
+load => Q[19]~reg0.ENA
+load => Q[18]~reg0.ENA
+load => Q[17]~reg0.ENA
+load => Q[16]~reg0.ENA
+load => Q[15]~reg0.ENA
+load => Q[14]~reg0.ENA
+load => Q[13]~reg0.ENA
+load => Q[12]~reg0.ENA
+load => Q[11]~reg0.ENA
+load => Q[10]~reg0.ENA
+load => Q[9]~reg0.ENA
+load => Q[8]~reg0.ENA
+load => Q[7]~reg0.ENA
+load => Q[6]~reg0.ENA
+load => Q[5]~reg0.ENA
+load => Q[4]~reg0.ENA
+load => Q[3]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+D[8] => Q[8]~reg0.DATAIN
+D[9] => Q[9]~reg0.DATAIN
+D[10] => Q[10]~reg0.DATAIN
+D[11] => Q[11]~reg0.DATAIN
+D[12] => Q[12]~reg0.DATAIN
+D[13] => Q[13]~reg0.DATAIN
+D[14] => Q[14]~reg0.DATAIN
+D[15] => Q[15]~reg0.DATAIN
+D[16] => Q[16]~reg0.DATAIN
+D[17] => Q[17]~reg0.DATAIN
+D[18] => Q[18]~reg0.DATAIN
+D[19] => Q[19]~reg0.DATAIN
+D[20] => Q[20]~reg0.DATAIN
+D[21] => Q[21]~reg0.DATAIN
+D[22] => Q[22]~reg0.DATAIN
+D[23] => Q[23]~reg0.DATAIN
+D[24] => Q[24]~reg0.DATAIN
+D[25] => Q[25]~reg0.DATAIN
+D[26] => Q[26]~reg0.DATAIN
+D[27] => Q[27]~reg0.DATAIN
+D[28] => Q[28]~reg0.DATAIN
+D[29] => Q[29]~reg0.DATAIN
+D[30] => Q[30]~reg0.DATAIN
+D[31] => Q[31]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[16] <= Q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[17] <= Q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[18] <= Q[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[19] <= Q[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[20] <= Q[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[21] <= Q[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[22] <= Q[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[23] <= Q[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[24] <= Q[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[25] <= Q[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[26] <= Q[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[27] <= Q[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[28] <= Q[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[29] <= Q[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[30] <= Q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[31] <= Q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|register_32:registrador_2
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+clk => Q[8]~reg0.CLK
+clk => Q[9]~reg0.CLK
+clk => Q[10]~reg0.CLK
+clk => Q[11]~reg0.CLK
+clk => Q[12]~reg0.CLK
+clk => Q[13]~reg0.CLK
+clk => Q[14]~reg0.CLK
+clk => Q[15]~reg0.CLK
+clk => Q[16]~reg0.CLK
+clk => Q[17]~reg0.CLK
+clk => Q[18]~reg0.CLK
+clk => Q[19]~reg0.CLK
+clk => Q[20]~reg0.CLK
+clk => Q[21]~reg0.CLK
+clk => Q[22]~reg0.CLK
+clk => Q[23]~reg0.CLK
+clk => Q[24]~reg0.CLK
+clk => Q[25]~reg0.CLK
+clk => Q[26]~reg0.CLK
+clk => Q[27]~reg0.CLK
+clk => Q[28]~reg0.CLK
+clk => Q[29]~reg0.CLK
+clk => Q[30]~reg0.CLK
+clk => Q[31]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+rst => Q[4]~reg0.ACLR
+rst => Q[5]~reg0.ACLR
+rst => Q[6]~reg0.ACLR
+rst => Q[7]~reg0.ACLR
+rst => Q[8]~reg0.ACLR
+rst => Q[9]~reg0.ACLR
+rst => Q[10]~reg0.ACLR
+rst => Q[11]~reg0.ACLR
+rst => Q[12]~reg0.ACLR
+rst => Q[13]~reg0.ACLR
+rst => Q[14]~reg0.ACLR
+rst => Q[15]~reg0.ACLR
+rst => Q[16]~reg0.ACLR
+rst => Q[17]~reg0.ACLR
+rst => Q[18]~reg0.ACLR
+rst => Q[19]~reg0.ACLR
+rst => Q[20]~reg0.ACLR
+rst => Q[21]~reg0.ACLR
+rst => Q[22]~reg0.ACLR
+rst => Q[23]~reg0.ACLR
+rst => Q[24]~reg0.ACLR
+rst => Q[25]~reg0.ACLR
+rst => Q[26]~reg0.ACLR
+rst => Q[27]~reg0.ACLR
+rst => Q[28]~reg0.ACLR
+rst => Q[29]~reg0.ACLR
+rst => Q[30]~reg0.ACLR
+rst => Q[31]~reg0.ACLR
+load => Q[31]~reg0.ENA
+load => Q[30]~reg0.ENA
+load => Q[29]~reg0.ENA
+load => Q[28]~reg0.ENA
+load => Q[27]~reg0.ENA
+load => Q[26]~reg0.ENA
+load => Q[25]~reg0.ENA
+load => Q[24]~reg0.ENA
+load => Q[23]~reg0.ENA
+load => Q[22]~reg0.ENA
+load => Q[21]~reg0.ENA
+load => Q[20]~reg0.ENA
+load => Q[19]~reg0.ENA
+load => Q[18]~reg0.ENA
+load => Q[17]~reg0.ENA
+load => Q[16]~reg0.ENA
+load => Q[15]~reg0.ENA
+load => Q[14]~reg0.ENA
+load => Q[13]~reg0.ENA
+load => Q[12]~reg0.ENA
+load => Q[11]~reg0.ENA
+load => Q[10]~reg0.ENA
+load => Q[9]~reg0.ENA
+load => Q[8]~reg0.ENA
+load => Q[7]~reg0.ENA
+load => Q[6]~reg0.ENA
+load => Q[5]~reg0.ENA
+load => Q[4]~reg0.ENA
+load => Q[3]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+D[8] => Q[8]~reg0.DATAIN
+D[9] => Q[9]~reg0.DATAIN
+D[10] => Q[10]~reg0.DATAIN
+D[11] => Q[11]~reg0.DATAIN
+D[12] => Q[12]~reg0.DATAIN
+D[13] => Q[13]~reg0.DATAIN
+D[14] => Q[14]~reg0.DATAIN
+D[15] => Q[15]~reg0.DATAIN
+D[16] => Q[16]~reg0.DATAIN
+D[17] => Q[17]~reg0.DATAIN
+D[18] => Q[18]~reg0.DATAIN
+D[19] => Q[19]~reg0.DATAIN
+D[20] => Q[20]~reg0.DATAIN
+D[21] => Q[21]~reg0.DATAIN
+D[22] => Q[22]~reg0.DATAIN
+D[23] => Q[23]~reg0.DATAIN
+D[24] => Q[24]~reg0.DATAIN
+D[25] => Q[25]~reg0.DATAIN
+D[26] => Q[26]~reg0.DATAIN
+D[27] => Q[27]~reg0.DATAIN
+D[28] => Q[28]~reg0.DATAIN
+D[29] => Q[29]~reg0.DATAIN
+D[30] => Q[30]~reg0.DATAIN
+D[31] => Q[31]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[16] <= Q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[17] <= Q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[18] <= Q[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[19] <= Q[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[20] <= Q[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[21] <= Q[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[22] <= Q[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[23] <= Q[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[24] <= Q[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[25] <= Q[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[26] <= Q[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[27] <= Q[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[28] <= Q[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[29] <= Q[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[30] <= Q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[31] <= Q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|mux_4x1_24bit:seleciona_soma
+reg_1[0] => d1.IN0
+reg_1[1] => d1.IN0
+reg_1[2] => d1.IN0
+reg_1[3] => d1.IN0
+reg_1[4] => d1.IN0
+reg_1[5] => d1.IN0
+reg_1[6] => d1.IN0
+reg_1[7] => d1.IN0
+reg_1[8] => d1.IN0
+reg_1[9] => d1.IN0
+reg_1[10] => d1.IN0
+reg_1[11] => d1.IN0
+reg_1[12] => d1.IN0
+reg_1[13] => d1.IN0
+reg_1[14] => d1.IN0
+reg_1[15] => d1.IN0
+reg_1[16] => d1.IN0
+reg_1[17] => d1.IN0
+reg_1[18] => d1.IN0
+reg_1[19] => d1.IN0
+reg_1[20] => d1.IN0
+reg_1[21] => d1.IN0
+reg_1[22] => d1.IN0
+reg_1[23] => d1.IN0
+reg_2[0] => d1.IN0
+reg_2[1] => d1.IN0
+reg_2[2] => d1.IN0
+reg_2[3] => d1.IN0
+reg_2[4] => d1.IN0
+reg_2[5] => d1.IN0
+reg_2[6] => d1.IN0
+reg_2[7] => d1.IN0
+reg_2[8] => d1.IN0
+reg_2[9] => d1.IN0
+reg_2[10] => d1.IN0
+reg_2[11] => d1.IN0
+reg_2[12] => d1.IN0
+reg_2[13] => d1.IN0
+reg_2[14] => d1.IN0
+reg_2[15] => d1.IN0
+reg_2[16] => d1.IN0
+reg_2[17] => d1.IN0
+reg_2[18] => d1.IN0
+reg_2[19] => d1.IN0
+reg_2[20] => d1.IN0
+reg_2[21] => d1.IN0
+reg_2[22] => d1.IN0
+reg_2[23] => d1.IN0
+rom_in[0] => d1.IN0
+rom_in[1] => d1.IN0
+rom_in[2] => d1.IN0
+rom_in[3] => d1.IN0
+rom_in[4] => d1.IN0
+rom_in[5] => d1.IN0
+rom_in[6] => d1.IN0
+rom_in[7] => d1.IN0
+rom_in[8] => d1.IN0
+rom_in[9] => d1.IN0
+rom_in[10] => d1.IN0
+rom_in[11] => d1.IN0
+rom_in[12] => d1.IN0
+rom_in[13] => d1.IN0
+rom_in[14] => d1.IN0
+rom_in[15] => d1.IN0
+rom_in[16] => d1.IN0
+rom_in[17] => d1.IN0
+rom_in[18] => d1.IN0
+rom_in[19] => d1.IN0
+rom_in[20] => d1.IN0
+rom_in[21] => d1.IN0
+rom_in[22] => d1.IN0
+rom_in[23] => d1.IN0
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[0] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+select_sum[1] => d1.IN1
+d1[0] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[1] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[2] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[3] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[4] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[5] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[6] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[7] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[8] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[9] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[10] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[11] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[12] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[13] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[14] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[15] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[16] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[17] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[18] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[19] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[20] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[21] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[22] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+d1[23] <= d1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar
+A[0] => somador:U0.a
+A[1] => somador:U1.a
+A[2] => somador:U2.a
+A[3] => somador:U3.a
+A[4] => somador:U4.a
+A[5] => somador:U5.a
+A[6] => somador:U6.a
+A[7] => somador:U7.a
+A[8] => somador:U8.a
+A[9] => somador:U9.a
+A[10] => somador:U10.a
+A[11] => somador:U11.a
+A[12] => somador:U12.a
+A[13] => somador:U13.a
+A[14] => somador:U14.a
+A[15] => somador:U15.a
+A[16] => somador:U16.a
+A[17] => somador:U17.a
+A[18] => somador:U18.a
+A[19] => somador:U19.a
+A[20] => somador:U20.a
+A[21] => somador:U21.a
+A[22] => somador:U22.a
+A[23] => somador:U23.a
+A[24] => somador:U24.a
+A[25] => somador:U25.a
+A[26] => somador:U26.a
+A[27] => somador:U27.a
+A[28] => somador:U28.a
+A[29] => somador:U29.a
+A[30] => somador:U30.a
+A[31] => somador:U31.a
+A[32] => somador:U32.a
+A[33] => somador:U33.a
+A[34] => somador:U34.a
+A[35] => somador:U35.a
+B[0] => somador:U0.b
+B[1] => somador:U1.b
+B[2] => somador:U2.b
+B[3] => somador:U3.b
+B[4] => somador:U4.b
+B[5] => somador:U5.b
+B[6] => somador:U6.b
+B[7] => somador:U7.b
+B[8] => somador:U8.b
+B[9] => somador:U9.b
+B[10] => somador:U10.b
+B[11] => somador:U11.b
+B[12] => somador:U12.b
+B[13] => somador:U13.b
+B[14] => somador:U14.b
+B[15] => somador:U15.b
+B[16] => somador:U16.b
+B[17] => somador:U17.b
+B[18] => somador:U18.b
+B[19] => somador:U19.b
+B[20] => somador:U20.b
+B[21] => somador:U21.b
+B[22] => somador:U22.b
+B[23] => somador:U23.b
+B[24] => somador:U24.b
+B[25] => somador:U25.b
+B[26] => somador:U26.b
+B[27] => somador:U27.b
+B[28] => somador:U28.b
+B[29] => somador:U29.b
+B[30] => somador:U30.b
+B[31] => somador:U31.b
+B[32] => somador:U32.b
+B[33] => somador:U33.b
+B[34] => somador:U34.b
+B[35] => somador:U35.b
+S[0] <= somador:U0.s
+S[1] <= somador:U1.s
+S[2] <= somador:U2.s
+S[3] <= somador:U3.s
+S[4] <= somador:U4.s
+S[5] <= somador:U5.s
+S[6] <= somador:U6.s
+S[7] <= somador:U7.s
+S[8] <= somador:U8.s
+S[9] <= somador:U9.s
+S[10] <= somador:U10.s
+S[11] <= somador:U11.s
+S[12] <= somador:U12.s
+S[13] <= somador:U13.s
+S[14] <= somador:U14.s
+S[15] <= somador:U15.s
+S[16] <= somador:U16.s
+S[17] <= somador:U17.s
+S[18] <= somador:U18.s
+S[19] <= somador:U19.s
+S[20] <= somador:U20.s
+S[21] <= somador:U21.s
+S[22] <= somador:U22.s
+S[23] <= somador:U23.s
+S[24] <= somador:U24.s
+S[25] <= somador:U25.s
+S[26] <= somador:U26.s
+S[27] <= somador:U27.s
+S[28] <= somador:U28.s
+S[29] <= somador:U29.s
+S[30] <= somador:U30.s
+S[31] <= somador:U31.s
+S[32] <= somador:U32.s
+S[33] <= somador:U33.s
+S[34] <= somador:U34.s
+S[35] <= somador:U35.s
+
+
+|perceptron|somador_36:somar|somador:U0
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U1
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U2
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U3
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U4
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U5
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U6
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U7
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U8
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U9
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U10
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U11
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U12
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U13
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U14
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U15
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U16
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U17
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U18
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U19
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U20
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U21
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U22
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U23
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U24
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U25
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U26
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U27
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U28
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U29
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U30
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U31
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U32
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U33
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U34
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|somador_36:somar|somador:U35
+a => s.IN0
+a => co.IN0
+a => co.IN0
+b => s.IN1
+b => co.IN1
+b => co.IN0
+ci => s.IN1
+ci => co.IN1
+ci => co.IN1
+co <= co.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|register_36:acumulador
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+clk => Q[8]~reg0.CLK
+clk => Q[9]~reg0.CLK
+clk => Q[10]~reg0.CLK
+clk => Q[11]~reg0.CLK
+clk => Q[12]~reg0.CLK
+clk => Q[13]~reg0.CLK
+clk => Q[14]~reg0.CLK
+clk => Q[15]~reg0.CLK
+clk => Q[16]~reg0.CLK
+clk => Q[17]~reg0.CLK
+clk => Q[18]~reg0.CLK
+clk => Q[19]~reg0.CLK
+clk => Q[20]~reg0.CLK
+clk => Q[21]~reg0.CLK
+clk => Q[22]~reg0.CLK
+clk => Q[23]~reg0.CLK
+clk => Q[24]~reg0.CLK
+clk => Q[25]~reg0.CLK
+clk => Q[26]~reg0.CLK
+clk => Q[27]~reg0.CLK
+clk => Q[28]~reg0.CLK
+clk => Q[29]~reg0.CLK
+clk => Q[30]~reg0.CLK
+clk => Q[31]~reg0.CLK
+clk => Q[32]~reg0.CLK
+clk => Q[33]~reg0.CLK
+clk => Q[34]~reg0.CLK
+clk => Q[35]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+rst => Q[4]~reg0.ACLR
+rst => Q[5]~reg0.ACLR
+rst => Q[6]~reg0.ACLR
+rst => Q[7]~reg0.ACLR
+rst => Q[8]~reg0.ACLR
+rst => Q[9]~reg0.ACLR
+rst => Q[10]~reg0.ACLR
+rst => Q[11]~reg0.ACLR
+rst => Q[12]~reg0.ACLR
+rst => Q[13]~reg0.ACLR
+rst => Q[14]~reg0.ACLR
+rst => Q[15]~reg0.ACLR
+rst => Q[16]~reg0.ACLR
+rst => Q[17]~reg0.ACLR
+rst => Q[18]~reg0.ACLR
+rst => Q[19]~reg0.ACLR
+rst => Q[20]~reg0.ACLR
+rst => Q[21]~reg0.ACLR
+rst => Q[22]~reg0.ACLR
+rst => Q[23]~reg0.ACLR
+rst => Q[24]~reg0.ACLR
+rst => Q[25]~reg0.ACLR
+rst => Q[26]~reg0.ACLR
+rst => Q[27]~reg0.ACLR
+rst => Q[28]~reg0.ACLR
+rst => Q[29]~reg0.ACLR
+rst => Q[30]~reg0.ACLR
+rst => Q[31]~reg0.ACLR
+rst => Q[32]~reg0.ACLR
+rst => Q[33]~reg0.ACLR
+rst => Q[34]~reg0.ACLR
+rst => Q[35]~reg0.ACLR
+load => Q[35]~reg0.ENA
+load => Q[34]~reg0.ENA
+load => Q[33]~reg0.ENA
+load => Q[32]~reg0.ENA
+load => Q[31]~reg0.ENA
+load => Q[30]~reg0.ENA
+load => Q[29]~reg0.ENA
+load => Q[28]~reg0.ENA
+load => Q[27]~reg0.ENA
+load => Q[26]~reg0.ENA
+load => Q[25]~reg0.ENA
+load => Q[24]~reg0.ENA
+load => Q[23]~reg0.ENA
+load => Q[22]~reg0.ENA
+load => Q[21]~reg0.ENA
+load => Q[20]~reg0.ENA
+load => Q[19]~reg0.ENA
+load => Q[18]~reg0.ENA
+load => Q[17]~reg0.ENA
+load => Q[16]~reg0.ENA
+load => Q[15]~reg0.ENA
+load => Q[14]~reg0.ENA
+load => Q[13]~reg0.ENA
+load => Q[12]~reg0.ENA
+load => Q[11]~reg0.ENA
+load => Q[10]~reg0.ENA
+load => Q[9]~reg0.ENA
+load => Q[8]~reg0.ENA
+load => Q[7]~reg0.ENA
+load => Q[6]~reg0.ENA
+load => Q[5]~reg0.ENA
+load => Q[4]~reg0.ENA
+load => Q[3]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[0]~reg0.ENA
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+D[8] => Q[8]~reg0.DATAIN
+D[9] => Q[9]~reg0.DATAIN
+D[10] => Q[10]~reg0.DATAIN
+D[11] => Q[11]~reg0.DATAIN
+D[12] => Q[12]~reg0.DATAIN
+D[13] => Q[13]~reg0.DATAIN
+D[14] => Q[14]~reg0.DATAIN
+D[15] => Q[15]~reg0.DATAIN
+D[16] => Q[16]~reg0.DATAIN
+D[17] => Q[17]~reg0.DATAIN
+D[18] => Q[18]~reg0.DATAIN
+D[19] => Q[19]~reg0.DATAIN
+D[20] => Q[20]~reg0.DATAIN
+D[21] => Q[21]~reg0.DATAIN
+D[22] => Q[22]~reg0.DATAIN
+D[23] => Q[23]~reg0.DATAIN
+D[24] => Q[24]~reg0.DATAIN
+D[25] => Q[25]~reg0.DATAIN
+D[26] => Q[26]~reg0.DATAIN
+D[27] => Q[27]~reg0.DATAIN
+D[28] => Q[28]~reg0.DATAIN
+D[29] => Q[29]~reg0.DATAIN
+D[30] => Q[30]~reg0.DATAIN
+D[31] => Q[31]~reg0.DATAIN
+D[32] => Q[32]~reg0.DATAIN
+D[33] => Q[33]~reg0.DATAIN
+D[34] => Q[34]~reg0.DATAIN
+D[35] => Q[35]~reg0.DATAIN
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[16] <= Q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[17] <= Q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[18] <= Q[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[19] <= Q[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[20] <= Q[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[21] <= Q[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[22] <= Q[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[23] <= Q[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[24] <= Q[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[25] <= Q[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[26] <= Q[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[27] <= Q[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[28] <= Q[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[29] <= Q[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[30] <= Q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[31] <= Q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[32] <= Q[32]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[33] <= Q[33]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[34] <= Q[34]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[35] <= Q[35]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|perceptron|decoder_7seg:decoder
+into => s0.DATAIN
+into => s3.DATAIN
+into => s4.DATAIN
+into => s5.DATAIN
+s0 <= into.DB_MAX_OUTPUT_PORT_TYPE
+s1 <= <VCC>
+s2 <= <VCC>
+s3 <= into.DB_MAX_OUTPUT_PORT_TYPE
+s4 <= into.DB_MAX_OUTPUT_PORT_TYPE
+s5 <= into.DB_MAX_OUTPUT_PORT_TYPE
+s6 <= <GND>
+
+

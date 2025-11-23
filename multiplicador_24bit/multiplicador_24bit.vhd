@@ -1,0 +1,389 @@
+entity multiplicador_24bit is 
+    port(
+        dados : in bit_vector(15 downto 0);
+        inp : in bit_vector(7 downto 0);
+        P: out bit_vector(23 downto 0)
+    );
+end multiplicador_24bit;
+
+architecture behav of multiplicador_24bit is
+
+component somador_24bit is 
+    port(
+        A : in bit_vector (23 downto 0);
+        B : in bit_vector (23 downto 0);
+        S : out bit_vector (23 downto 0)
+    );
+end component; 
+
+    signal pp0, pp1, pp2, pp3, pp4, pp5, pp6, pp7: bit_vector(23 downto 0);
+
+    signal sum1, sum2, sum3, sum4, sum5, sum6, sum7 : bit_vector(23 downto 0);
+     
+
+begin
+
+    pp0(0) <= dados(0) and inp(0);
+    
+    pp0(1) <= dados(1) and inp(0);
+    
+    pp0(2) <= dados(2) and inp(0);
+    
+    pp0(3) <= dados(3) and inp(0);
+    
+    pp0(4) <= dados(4) and inp(0);
+    
+    pp0(5) <= dados(5) and inp(0);
+    
+    pp0(6) <= dados(6) and inp(0);
+    
+    pp0(7) <= dados(7) and inp(0);
+    
+    pp0(8) <= dados(8) and inp(0);
+    
+    pp0(9) <= dados(9) and inp(0);
+    
+    pp0(10) <= dados(10) and inp(0);
+    
+    pp0(11) <= dados(11) and inp(0);
+    
+    pp0(12) <= dados(12) and inp(0);
+    
+    pp0(13) <= dados(13) and inp(0);
+    
+    pp0(14) <= dados(14) and inp(0);
+    
+    pp0(15) <= dados(15) and inp(0);
+
+    pp0(16) <= '0'; pp0(17) <= '0'; pp0(18) <= '0'; pp0(19) <= '0'; 
+    
+    pp0(20) <= '0'; pp0(21) <= '0'; pp0(22) <= '0'; pp0(23) <= '0'; 
+
+    
+    pp1(0) <= '0'; 
+
+    pp1(1) <= dados(0) and inp(1);
+    
+    pp1(2) <= dados(1) and inp(1); 
+
+    pp1(3) <= dados(2) and inp(1);
+
+    pp1(4) <= dados(3) and inp(1);
+
+    pp1(5) <= dados(4) and inp(1);
+
+    pp1(6) <= dados(5) and inp(1);
+
+    pp1(7) <= dados(6) and inp(1);
+
+    pp1(8) <= dados(7) and inp(1);
+
+    pp1(9) <= dados(8) and inp(1);
+
+    pp1(10) <= dados(9) and inp(1);
+
+    pp1(11) <= dados(10) and inp(1);
+
+    pp1(12) <= dados(11) and inp(1);
+
+    pp1(13) <= dados(12) and inp(1);
+
+    pp1(14) <= dados(13) and inp(1);
+
+    pp1(15) <= dados(14) and inp(1);
+
+    pp1(16) <= dados(15) and inp(1);
+
+    pp1(17) <= '0'; pp1(18) <= '0'; pp1(19) <= '0'; pp1(20) <= '0';
+
+    pp1(21) <= '0'; pp1(22) <= '0'; pp1(23) <= '0';
+
+
+    pp2(0) <= '0';
+
+    pp2(1) <= '0';
+
+    pp2(2) <= dados(0) and inp(2);
+
+    pp2(3) <= dados(1) and inp(2);
+
+    pp2(4) <= dados(2) and inp(2);
+
+    pp2(5) <= dados(3) and inp(2);
+
+    pp2(6) <= dados(4) and inp(2);
+
+    pp2(7) <= dados(5) and inp(2);
+
+    pp2(8) <= dados(6) and inp(2);
+
+    pp2(9) <= dados(7) and inp(2);
+
+    pp2(10) <= dados(8) and inp(2);
+
+    pp2(11) <= dados(9) and inp(2);
+
+    pp2(12) <= dados(10) and inp(2);
+
+    pp2(13) <= dados(11) and inp(2);
+
+    pp2(14) <= dados(12) and inp(2);
+
+    pp2(15) <= dados(13) and inp(2);
+
+    pp2(16) <= dados(14) and inp(2);
+
+    pp2(17) <= dados(15) and inp(2);
+
+    pp2(18) <= '0'; pp2(19) <= '0'; pp2(20) <= '0';
+
+    pp2(21) <= '0'; pp2(22) <= '0'; pp2(23) <= '0';
+
+    pp3(0) <= '0'; 
+
+    pp3(1) <= '0'; 
+
+    pp3(2) <= '0'; 
+
+    pp3(3) <= dados(0) and inp(3); 
+
+    pp3(4) <= dados(1) and inp(3); 
+
+    pp3(5) <= dados(2) and inp(3); 
+
+    pp3(6) <= dados(3) and inp(3); 
+
+    pp3(7) <= dados(4) and inp(3); 
+
+    pp3(8) <= dados(5) and inp(3); 
+
+    pp3(9) <= dados(6) and inp(3); 
+
+    pp3(10) <= dados(7) and inp(3); 
+
+    pp3(11) <= dados(8) and inp(3); 
+
+    pp3(12) <= dados(9) and inp(3); 
+
+    pp3(13) <= dados(10) and inp(3); 
+
+    pp3(14) <= dados(11) and inp(3); 
+
+    pp3(15) <= dados(12) and inp(3); 
+
+    pp3(16) <= dados(13) and inp(3); 
+    
+    pp3(17) <= dados(14) and inp(3); 
+    
+    pp3(18) <= dados(15) and inp(3); 
+    
+    pp3(19) <= '0'; pp3(20) <= '0'; pp3(21) <= '0'; 
+
+    pp3(22) <= '0'; pp3(23) <= '0'; 
+
+
+    pp4(0) <= '0'; 
+
+    pp4(1) <= '0'; 
+
+    pp4(2) <= '0'; 
+
+    pp4(3) <= '0'; 
+
+    pp4(4) <= dados(0) and inp(4);
+    
+    pp4(5) <= dados(1) and inp(4); 
+
+    pp4(6) <= dados(2) and inp(4); 
+
+    pp4(7) <= dados(3) and inp(4); 
+
+    pp4(8) <= dados(4) and inp(4); 
+
+    pp4(9) <= dados(5) and inp(4); 
+
+    pp4(10) <= dados(6) and inp(4); 
+
+    pp4(11) <= dados(7) and inp(4); 
+
+    pp4(12) <= dados(8) and inp(4); 
+
+    pp4(13) <= dados(9) and inp(4); 
+
+    pp4(14) <= dados(10) and inp(4); 
+
+    pp4(15) <= dados(11) and inp(4); 
+
+    pp4(16) <= dados(12) and inp(4); 
+
+    pp4(17) <= dados(13) and inp(4); 
+
+    pp4(18) <= dados(14) and inp(4); 
+
+    pp4(19) <= dados(15) and inp(4); 
+
+    pp4(20) <= '0'; pp4(21) <= '0'; 
+    
+    pp4(22) <= '0'; pp4(23) <= '0'; 
+
+
+    pp5(0) <= '0';
+
+    pp5(1) <= '0';
+
+    pp5(2) <= '0';
+
+    pp5(3) <= '0';
+
+    pp5(4) <= '0';
+
+    pp5(5) <= dados(0) and inp(5);
+
+    pp5(6) <= dados(1) and inp(5);
+
+    pp5(7) <= dados(2) and inp(5);
+
+    pp5(8) <= dados(3) and inp(5);
+
+    pp5(9) <= dados(4) and inp(5);
+
+    pp5(10) <= dados(5) and inp(5);
+
+    pp5(11) <= dados(6) and inp(5);
+
+    pp5(12) <= dados(7) and inp(5);
+
+    pp5(13) <= dados(8) and inp(5);
+
+    pp5(14) <= dados(9) and inp(5);
+
+    pp5(15) <= dados(10) and inp(5);
+
+    pp5(16) <= dados(11) and inp(5);
+    
+    pp5(17) <= dados(12) and inp(5);
+
+    pp5(18) <= dados(13) and inp(5);
+
+    pp5(19) <= dados(14) and inp(5);
+
+    pp5(20) <= dados(15) and inp(5);
+
+    pp5(21) <= '0'; pp5(22) <= '0'; pp5(23) <= '0';
+
+    
+    pp6(0) <= '0';
+    
+    pp6(1) <= '0';
+    
+    pp6(2) <= '0';
+    
+    pp6(3) <= '0';
+    
+    pp6(4) <= '0';
+    
+    pp6(5) <= '0'; 
+
+    pp6(6) <= dados(0) and inp(6); 
+
+    pp6(7) <= dados(1) and inp(6); 
+
+    pp6(8) <= dados(2) and inp(6); 
+
+    pp6(9) <= dados(3) and inp(6); 
+
+    pp6(10) <= dados(4) and inp(6); 
+
+    pp6(11) <= dados(5) and inp(6); 
+
+    pp6(12) <= dados(6) and inp(6); 
+
+    pp6(13) <= dados(7) and inp(6); 
+
+    pp6(14) <= dados(8) and inp(6); 
+
+    pp6(15) <= dados(9) and inp(6); 
+
+    pp6(16) <= dados(10) and inp(6); 
+
+    pp6(17) <= dados(11) and inp(6); 
+
+    pp6(18) <= dados(12) and inp(6); 
+
+    pp6(19) <= dados(13) and inp(6); 
+
+    pp6(20) <= dados(14) and inp(6); 
+
+    pp6(21) <= dados(15) and inp(6); 
+
+    pp6(22) <= '0'; pp6(23) <= '0';
+
+
+    pp7(0) <='0';
+    
+    pp7(1) <='0'; 
+    
+    pp7(2) <='0'; 
+    
+    pp7(3) <='0'; 
+    
+    pp7(4) <='0'; 
+    
+    pp7(5) <='0'; 
+    
+    pp7(6) <='0'; 
+
+    pp7(7) <= dados(0) and inp(7); 
+
+    pp7(8) <= dados(1) and inp(7);
+
+    pp7(9) <= dados(2) and inp(7);
+
+    pp7(10) <= dados(3) and inp(7);
+
+    pp7(11) <= dados(4) and inp(7);
+
+    pp7(12) <= dados(5) and inp(7);
+
+    pp7(13) <= dados(6) and inp(7);
+
+    pp7(14) <= dados(7) and inp(7);
+
+    pp7(15) <= dados(8) and inp(7);
+
+    pp7(16) <= dados(9) and inp(7);
+
+    pp7(17) <= dados(10) and inp(7);
+
+    pp7(18) <= dados(11) and inp(7);
+
+    pp7(19) <= dados(12) and inp(7);
+
+    pp7(20) <= dados(13) and inp(7);
+
+    pp7(21) <= dados(14) and inp(7);
+
+    pp7(22) <= dados(15) and inp(7);
+    
+    pp7(23) <='0'; 
+
+    
+
+
+    soma1: somador_24bit port map(A=> pp0, B=>pp1, S =>sum1 );
+
+    soma2: somador_24bit port map(A=> sum1, B=>pp2, S =>sum2 );
+
+    soma3: somador_24bit port map(A=>sum2 , B=> pp3, S => sum3);
+
+    soma4: somador_24bit port map(A=> sum3, B=> pp4, S =>sum4 );
+
+    soma5: somador_24bit port map(A=>sum4 , B=> pp5 , S => sum5 );
+
+    soma6: somador_24bit port map(A=> sum5, B=> pp6, S => sum6 );
+
+    soma7: somador_24bit port map(A=>sum6, B=> pp7, S => sum7);
+
+    P <= sum7;
+
+end architecture behav;

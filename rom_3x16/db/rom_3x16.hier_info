@@ -1,0 +1,31 @@
+|rom_3x16
+adress[0] => Mux0.IN5
+adress[0] => Mux1.IN5
+adress[1] => Mux0.IN4
+adress[1] => Mux1.IN4
+adress[1] => dado_out[13].DATAIN
+adress[1] => dado_out[12].DATAIN
+adress[1] => dado_out[8].DATAIN
+adress[1] => dado_out[7].DATAIN
+adress[1] => dado_out[6].DATAIN
+adress[1] => dado_out[4].DATAIN
+adress[1] => dado_out[3].DATAIN
+adress[1] => dado_out[0].DATAIN
+dado_out[0] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+dado_out[2] <= <GND>
+dado_out[3] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[4] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[5] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+dado_out[6] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[7] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[8] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[9] <= <GND>
+dado_out[10] <= <GND>
+dado_out[11] <= <GND>
+dado_out[12] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[13] <= adress[1].DB_MAX_OUTPUT_PORT_TYPE
+dado_out[14] <= <GND>
+dado_out[15] <= <GND>
+
+

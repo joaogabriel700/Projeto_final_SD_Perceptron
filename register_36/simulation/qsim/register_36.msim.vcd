@@ -1,0 +1,370 @@
+$comment
+	File created using the following command:
+		vcd file register_36.msim.vcd -direction
+$end
+$date
+	Sat Nov 22 12:25:51 2025
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module register_36_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 36 " D [35:0] $end
+$var reg 1 # load $end
+$var reg 1 $ rst $end
+$var wire 1 % Q [35] $end
+$var wire 1 & Q [34] $end
+$var wire 1 ' Q [33] $end
+$var wire 1 ( Q [32] $end
+$var wire 1 ) Q [31] $end
+$var wire 1 * Q [30] $end
+$var wire 1 + Q [29] $end
+$var wire 1 , Q [28] $end
+$var wire 1 - Q [27] $end
+$var wire 1 . Q [26] $end
+$var wire 1 / Q [25] $end
+$var wire 1 0 Q [24] $end
+$var wire 1 1 Q [23] $end
+$var wire 1 2 Q [22] $end
+$var wire 1 3 Q [21] $end
+$var wire 1 4 Q [20] $end
+$var wire 1 5 Q [19] $end
+$var wire 1 6 Q [18] $end
+$var wire 1 7 Q [17] $end
+$var wire 1 8 Q [16] $end
+$var wire 1 9 Q [15] $end
+$var wire 1 : Q [14] $end
+$var wire 1 ; Q [13] $end
+$var wire 1 < Q [12] $end
+$var wire 1 = Q [11] $end
+$var wire 1 > Q [10] $end
+$var wire 1 ? Q [9] $end
+$var wire 1 @ Q [8] $end
+$var wire 1 A Q [7] $end
+$var wire 1 B Q [6] $end
+$var wire 1 C Q [5] $end
+$var wire 1 D Q [4] $end
+$var wire 1 E Q [3] $end
+$var wire 1 F Q [2] $end
+$var wire 1 G Q [1] $end
+$var wire 1 H Q [0] $end
+$var wire 1 I sampler $end
+$scope module i1 $end
+$var wire 1 J gnd $end
+$var wire 1 K vcc $end
+$var wire 1 L unknown $end
+$var tri1 1 M devclrn $end
+$var tri1 1 N devpor $end
+$var tri1 1 O devoe $end
+$var wire 1 P clk~combout $end
+$var wire 1 Q clk~clkctrl_outclk $end
+$var wire 1 R Q[0]~reg0feeder_combout $end
+$var wire 1 S rst~combout $end
+$var wire 1 T rst~clkctrl_outclk $end
+$var wire 1 U load~combout $end
+$var wire 1 V Q[0]~reg0_regout $end
+$var wire 1 W Q[1]~reg0feeder_combout $end
+$var wire 1 X Q[1]~reg0_regout $end
+$var wire 1 Y Q[2]~reg0feeder_combout $end
+$var wire 1 Z Q[2]~reg0_regout $end
+$var wire 1 [ Q[3]~reg0feeder_combout $end
+$var wire 1 \ Q[3]~reg0_regout $end
+$var wire 1 ] Q[4]~reg0_regout $end
+$var wire 1 ^ Q[5]~reg0feeder_combout $end
+$var wire 1 _ Q[5]~reg0_regout $end
+$var wire 1 ` Q[6]~reg0_regout $end
+$var wire 1 a Q[7]~reg0_regout $end
+$var wire 1 b Q[8]~reg0feeder_combout $end
+$var wire 1 c Q[8]~reg0_regout $end
+$var wire 1 d Q[9]~reg0feeder_combout $end
+$var wire 1 e Q[9]~reg0_regout $end
+$var wire 1 f Q[10]~reg0feeder_combout $end
+$var wire 1 g Q[10]~reg0_regout $end
+$var wire 1 h Q[11]~reg0feeder_combout $end
+$var wire 1 i Q[11]~reg0_regout $end
+$var wire 1 j Q[12]~reg0feeder_combout $end
+$var wire 1 k Q[12]~reg0_regout $end
+$var wire 1 l Q[13]~reg0_regout $end
+$var wire 1 m Q[14]~reg0_regout $end
+$var wire 1 n Q[15]~reg0_regout $end
+$var wire 1 o Q[16]~reg0feeder_combout $end
+$var wire 1 p Q[16]~reg0_regout $end
+$var wire 1 q Q[17]~reg0_regout $end
+$var wire 1 r Q[18]~reg0feeder_combout $end
+$var wire 1 s Q[18]~reg0_regout $end
+$var wire 1 t Q[19]~reg0feeder_combout $end
+$var wire 1 u Q[19]~reg0_regout $end
+$var wire 1 v Q[20]~reg0_regout $end
+$var wire 1 w Q[21]~reg0_regout $end
+$var wire 1 x Q[22]~reg0_regout $end
+$var wire 1 y Q[23]~reg0_regout $end
+$var wire 1 z Q[24]~reg0feeder_combout $end
+$var wire 1 { Q[24]~reg0_regout $end
+$var wire 1 | Q[25]~reg0feeder_combout $end
+$var wire 1 } Q[25]~reg0_regout $end
+$var wire 1 ~ Q[26]~reg0_regout $end
+$var wire 1 !! Q[27]~reg0feeder_combout $end
+$var wire 1 "! Q[27]~reg0_regout $end
+$var wire 1 #! Q[28]~reg0_regout $end
+$var wire 1 $! Q[29]~reg0_regout $end
+$var wire 1 %! Q[30]~reg0_regout $end
+$var wire 1 &! Q[31]~reg0_regout $end
+$var wire 1 '! Q[32]~reg0feeder_combout $end
+$var wire 1 (! Q[32]~reg0_regout $end
+$var wire 1 )! Q[33]~reg0_regout $end
+$var wire 1 *! Q[34]~reg0_regout $end
+$var wire 1 +! Q[35]~reg0_regout $end
+$var wire 1 ,! D~combout [35] $end
+$var wire 1 -! D~combout [34] $end
+$var wire 1 .! D~combout [33] $end
+$var wire 1 /! D~combout [32] $end
+$var wire 1 0! D~combout [31] $end
+$var wire 1 1! D~combout [30] $end
+$var wire 1 2! D~combout [29] $end
+$var wire 1 3! D~combout [28] $end
+$var wire 1 4! D~combout [27] $end
+$var wire 1 5! D~combout [26] $end
+$var wire 1 6! D~combout [25] $end
+$var wire 1 7! D~combout [24] $end
+$var wire 1 8! D~combout [23] $end
+$var wire 1 9! D~combout [22] $end
+$var wire 1 :! D~combout [21] $end
+$var wire 1 ;! D~combout [20] $end
+$var wire 1 <! D~combout [19] $end
+$var wire 1 =! D~combout [18] $end
+$var wire 1 >! D~combout [17] $end
+$var wire 1 ?! D~combout [16] $end
+$var wire 1 @! D~combout [15] $end
+$var wire 1 A! D~combout [14] $end
+$var wire 1 B! D~combout [13] $end
+$var wire 1 C! D~combout [12] $end
+$var wire 1 D! D~combout [11] $end
+$var wire 1 E! D~combout [10] $end
+$var wire 1 F! D~combout [9] $end
+$var wire 1 G! D~combout [8] $end
+$var wire 1 H! D~combout [7] $end
+$var wire 1 I! D~combout [6] $end
+$var wire 1 J! D~combout [5] $end
+$var wire 1 K! D~combout [4] $end
+$var wire 1 L! D~combout [3] $end
+$var wire 1 M! D~combout [2] $end
+$var wire 1 N! D~combout [1] $end
+$var wire 1 O! D~combout [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b1000000000000000000000000000000001 "
+0#
+0$
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+xI
+0J
+1K
+xL
+1M
+1N
+1O
+0P
+0Q
+1R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+1O!
+0N!
+0M!
+0L!
+0K!
+0J!
+0I!
+0H!
+0G!
+0F!
+0E!
+0D!
+0C!
+0B!
+0A!
+0@!
+0?!
+0>!
+0=!
+0<!
+0;!
+0:!
+09!
+08!
+07!
+06!
+05!
+04!
+03!
+02!
+01!
+00!
+0/!
+1.!
+0-!
+0,!
+$end
+#125000
+1$
+1S
+1T
+0I
+#250000
+1!
+1#
+0$
+1P
+1U
+0S
+0T
+1Q
+1I
+1)!
+1V
+1'
+1H
+#375000
+1$
+1S
+1T
+0I
+0)!
+0V
+0'
+0H
+#500000
+0!
+0#
+0$
+0P
+0U
+0S
+0T
+0Q
+1I
+#625000
+1$
+1S
+1T
+0I
+#750000
+1!
+1#
+0$
+1P
+1U
+0S
+0T
+1Q
+1I
+1)!
+1V
+1'
+1H
+#875000
+1$
+1S
+1T
+0I
+0)!
+0V
+0'
+0H
+#1000000
